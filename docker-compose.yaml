@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  redis:
+    image: docker.arvancloud.ir/redis:7.4.2
+    command: redis-server /usr/local/etc/redis/redis.conf
+    ports:
+      - "127.0.0.1:4389:6379"
+    volumes:
+      - ../volumes/testCenterBot/redis/redis-config/:/usr/local/etc/redis/
+      - ../volumes/testCenterBot/redis/data:/data
+    env_file:
+      - .env
+  bot:
+    build: .
+    restart: always

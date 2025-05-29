@@ -1,0 +1,5 @@
+python-telegram-bot==22.1
+redis==6.1.0
+uwsgi==2.0.29
+python-dotenv==1.1.0
+requests==2.32.3
