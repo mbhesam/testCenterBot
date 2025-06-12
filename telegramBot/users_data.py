@@ -16,7 +16,7 @@ def get_user_key(username):
 
 def get_user_data(username):
     data = redis_client.get(get_user_key(username))
-    return json.loads(data) if data else {'status': 'start', 'info': {}, 'off_count': 0}
+    return json.loads(data) if data else {'status': 'start', 'info': {}, 'test_off_count': 0,'share_off_count': 0 }
 
 def save_user_data(username, data):
     redis_client.set(get_user_key(username), json.dumps(data))
@@ -41,3 +41,8 @@ def save_exam_data(username, data):
     redis_client.set(get_exam_key(username), json.dumps(data))
 def clear_exam_data(username):
     redis_client.delete(get_exam_key(username))
+
+def clear_share_count(username):
+    user_data = get_user_data(username=username)
+    user_data['share_off_count'] = 0
+    redis_client.set(get_exam_key(username), json.dumps(user_data))

@@ -11,6 +11,10 @@ services:
       - ../volumes/testCenterBot/redis/data:/data
     env_file:
       - .env
+    restart: always
+
   bot:
     build: .
     restart: always
+    volumes:
+      - ../volumes/testCenterBot/bot/data:/code/data

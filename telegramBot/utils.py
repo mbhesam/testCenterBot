@@ -16,6 +16,26 @@ from common import (
 )
 import random
 import httpx
+import yaml
+
+def load_cities_by_state_and_country(state_code, country_code):
+    with open('/home/hesam/projects/testCenterBot/data/cities.yml', 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
+    return [
+        city for city in data['city']
+        if city['state_code'] == state_code and city['country_code'] == country_code
+    ]
+def load_countries():
+    with open('/home/hesam/projects/testCenterBot/data/countries.yml', 'r', encoding='utf-8') as f:
+        data = yaml.safe_load(f)
+        return data['country']
+
+
+def load_states_by_country_code(iso2_code: str):
+    with open("/home/hesam/projects/testCenterBot/data/states.yml", "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f)
+        all_states = data['state']
+        return [state for state in all_states if state['country_code'] == iso2_code]
 
 def check_grade(score=-1):
     if score == -1:
@@ -27,25 +47,49 @@ def check_grade(score=-1):
     else:
         return 'C',GRADE_C_MESSAGE,False
 
-def approve_off_code(grade):
+import requests
+
+def approve_off_code(grade, phone_number):
     if grade == 'A':
-        submit_off_code(GRADE_A_OFF, PRODUCT_IDS_A)
+        off_code = submit_off_code(phone_number, GRADE_A_OFF, PRODUCT_IDS_A)
+    elif grade == 'B':
+        off_code = submit_off_code(phone_number, GRADE_B_OFF, PRODUCT_IDS_B)
+    elif grade == 'S':
+        off_code = submit_off_code(phone_number, GRADE_S_OFF, PRODUCT_IDS_S)
+    else:
+        off_code = None
+    return off_code
 
-async def submit_off_code(off_percent, product_ids):
+def submit_off_code(phone_number, off_percent, product_ids):
     try:
-        async with httpx.AsyncClient() as client:
-            response = await client.post(
-                WEBSITE_API_KEY,
-                headers={
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                json={}
-            )
-            response.raise_for_status()
-            response_obj = response.json()
+        print("submitting")
+        data = [
+            ('api_key', WEBSITE_API_KEY),
+            ('discount_type', 'percent'),
+            ('username', phone_number),
+            ('discount_percent', off_percent),
+            ('usage_limit', '1'),
+            ('expiry_date', '2025-08-01'),
+        ]
+        # Add all product_ids[] as repeated form fields
+        data.extend([('product_ids[]', pid) for pid in product_ids])
 
+        response = requests.post(
+            url=WEBSITE_API_URL,
+            headers={
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            data=data
+        )
+        response.raise_for_status()
+        response_obj = response.json()
+        print(response_obj)
+        return response_obj
 
+    except requests.HTTPError as e:
+        print(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
     except Exception as e:
+        print(f"An error occurred: {e}")
         print(f'exception on calling website api:\n{e}')
 
 async def fetch_questions():

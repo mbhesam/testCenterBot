@@ -1,0 +1,2822 @@
+country:
+- capital: Kabul
+  currency: AFN
+  currency_name: Afghan afghani
+  currency_symbol: ؋
+  emoji: 🇦🇫
+  emojiU: U+1F1E6 U+1F1EB
+  id: 1
+  iso2: AF
+  iso3: AFG
+  latitude: '33.00000000'
+  longitude: '65.00000000'
+  name: Afghanistan
+  nationality: Afghan
+  native: افغانستان
+  numeric_code: '004'
+  phonecode: '93'
+  region: Asia
+  region_id: 3
+  subregion: Southern Asia
+  subregion_id: 14
+  timezones:
+  - abbreviation: AFT
+    gmtOffset: 16200
+    gmtOffsetName: UTC+04:30
+    tzName: Afghanistan Time
+    zoneName: Asia/Kabul
+  tld: .af
+  translations:
+    de: Afghanistan
+    es: Afganistán
+    fa: افغانستان
+    fr: Afghanistan
+    hr: Afganistan
+    it: Afghanistan
+    ja: アフガニスタン
+    ko: 아프가니스탄
+    nl: Afghanistan
+    pl: Afganistan
+    pt: Afeganistão
+    pt-BR: Afeganistão
+    ru: Афганистан
+    tr: Afganistan
+    uk: Афганістан
+    zh-CN: 阿富汗
+- capital: Buenos Aires
+  currency: ARS
+  currency_name: Argentine peso
+  currency_symbol: $
+  emoji: 🇦🇷
+  emojiU: U+1F1E6 U+1F1F7
+  id: 11
+  iso2: AR
+  iso3: ARG
+  latitude: '-34.00000000'
+  longitude: '-64.00000000'
+  name: Argentina
+  nationality: Argentine
+  native: Argentina
+  numeric_code: '032'
+  phonecode: '54'
+  region: Americas
+  region_id: 2
+  subregion: South America
+  subregion_id: 8
+  timezones:
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Buenos_Aires
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Catamarca
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Cordoba
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Jujuy
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/La_Rioja
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Mendoza
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Rio_Gallegos
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Salta
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/San_Juan
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/San_Luis
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Tucuman
+  - abbreviation: ART
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Argentina Time
+    zoneName: America/Argentina/Ushuaia
+  tld: .ar
+  translations:
+    de: Argentinien
+    es: Argentina
+    fa: آرژانتین
+    fr: Argentine
+    hr: Argentina
+    it: Argentina
+    ja: アルゼンチン
+    ko: 아르헨티나
+    nl: Argentinië
+    pl: Argentyna
+    pt: Argentina
+    pt-BR: Argentina
+    ru: Аргентина
+    tr: Arjantin
+    uk: Аргентина
+    zh-CN: 阿根廷
+- capital: Canberra
+  currency: AUD
+  currency_name: Australian dollar
+  currency_symbol: $
+  emoji: 🇦🇺
+  emojiU: U+1F1E6 U+1F1FA
+  id: 14
+  iso2: AU
+  iso3: AUS
+  latitude: '-27.00000000'
+  longitude: '133.00000000'
+  name: Australia
+  nationality: Australian
+  native: Australia
+  numeric_code: '036'
+  phonecode: '61'
+  region: Oceania
+  region_id: 5
+  subregion: Australia and New Zealand
+  subregion_id: 19
+  timezones:
+  - abbreviation: MIST
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Macquarie Island Station Time
+    zoneName: Antarctica/Macquarie
+  - abbreviation: ACDT
+    gmtOffset: 37800
+    gmtOffsetName: UTC+10:30
+    tzName: Australian Central Daylight Saving Time
+    zoneName: Australia/Adelaide
+  - abbreviation: AEST
+    gmtOffset: 36000
+    gmtOffsetName: UTC+10:00
+    tzName: Australian Eastern Standard Time
+    zoneName: Australia/Brisbane
+  - abbreviation: ACDT
+    gmtOffset: 37800
+    gmtOffsetName: UTC+10:30
+    tzName: Australian Central Daylight Saving Time
+    zoneName: Australia/Broken_Hill
+  - abbreviation: AEDT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Australian Eastern Daylight Saving Time
+    zoneName: Australia/Currie
+  - abbreviation: ACST
+    gmtOffset: 34200
+    gmtOffsetName: UTC+09:30
+    tzName: Australian Central Standard Time
+    zoneName: Australia/Darwin
+  - abbreviation: ACWST
+    gmtOffset: 31500
+    gmtOffsetName: UTC+08:45
+    tzName: Australian Central Western Standard Time (Unofficial)
+    zoneName: Australia/Eucla
+  - abbreviation: AEDT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Australian Eastern Daylight Saving Time
+    zoneName: Australia/Hobart
+  - abbreviation: AEST
+    gmtOffset: 36000
+    gmtOffsetName: UTC+10:00
+    tzName: Australian Eastern Standard Time
+    zoneName: Australia/Lindeman
+  - abbreviation: LHST
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Lord Howe Summer Time
+    zoneName: Australia/Lord_Howe
+  - abbreviation: AEDT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Australian Eastern Daylight Saving Time
+    zoneName: Australia/Melbourne
+  - abbreviation: AWST
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Australian Western Standard Time
+    zoneName: Australia/Perth
+  - abbreviation: AEDT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Australian Eastern Daylight Saving Time
+    zoneName: Australia/Sydney
+  tld: .au
+  translations:
+    de: Australien
+    es: Australia
+    fa: استرالیا
+    fr: Australie
+    hr: Australija
+    it: Australia
+    ja: オーストラリア
+    ko: 호주
+    nl: Australië
+    pl: Australia
+    pt: Austrália
+    pt-BR: Austrália
+    ru: Австралия
+    tr: Avustralya
+    uk: Австралія
+    zh-CN: 澳大利亚
+- capital: Vienna
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇦🇹
+  emojiU: U+1F1E6 U+1F1F9
+  id: 15
+  iso2: AT
+  iso3: AUT
+  latitude: '47.33333333'
+  longitude: '13.33333333'
+  name: Austria
+  nationality: Austrian
+  native: Österreich
+  numeric_code: '040'
+  phonecode: '43'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Vienna
+  tld: .at
+  translations:
+    de: Österreich
+    es: Austria
+    fa: اتریش
+    fr: Autriche
+    hr: Austrija
+    it: Austria
+    ja: オーストリア
+    ko: 오스트리아
+    nl: Oostenrijk
+    pl: Austria
+    pt: áustria
+    pt-BR: áustria
+    ru: Австрия
+    tr: Avusturya
+    uk: Австрія
+    zh-CN: 奥地利
+- capital: Dhaka
+  currency: BDT
+  currency_name: Bangladeshi taka
+  currency_symbol: ৳
+  emoji: 🇧🇩
+  emojiU: U+1F1E7 U+1F1E9
+  id: 19
+  iso2: BD
+  iso3: BGD
+  latitude: '24.00000000'
+  longitude: '90.00000000'
+  name: Bangladesh
+  nationality: Bangladeshi
+  native: Bangladesh
+  numeric_code: '050'
+  phonecode: '880'
+  region: Asia
+  region_id: 3
+  subregion: Southern Asia
+  subregion_id: 14
+  timezones:
+  - abbreviation: BDT
+    gmtOffset: 21600
+    gmtOffsetName: UTC+06:00
+    tzName: Bangladesh Standard Time
+    zoneName: Asia/Dhaka
+  tld: .bd
+  translations:
+    de: Bangladesch
+    es: Bangladesh
+    fa: بنگلادش
+    fr: Bangladesh
+    hr: Bangladeš
+    it: Bangladesh
+    ja: バングラデシュ
+    ko: 방글라데시
+    nl: Bangladesh
+    pl: Bangladesz
+    pt: Bangladeche
+    pt-BR: Bangladesh
+    ru: Бангладеш
+    tr: Bangladeş
+    uk: Бангладеш
+    zh-CN: 孟加拉
+- capital: Brussels
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇧🇪
+  emojiU: U+1F1E7 U+1F1EA
+  id: 22
+  iso2: BE
+  iso3: BEL
+  latitude: '50.83333333'
+  longitude: '4.00000000'
+  name: Belgium
+  nationality: Belgian
+  native: België
+  numeric_code: '056'
+  phonecode: '32'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Brussels
+  tld: .be
+  translations:
+    de: Belgien
+    es: Bélgica
+    fa: بلژیک
+    fr: Belgique
+    hr: Belgija
+    it: Belgio
+    ja: ベルギー
+    ko: 벨기에
+    nl: België
+    pl: Belgia
+    pt: Bélgica
+    pt-BR: Bélgica
+    ru: Бельгия
+    tr: Belçika
+    uk: Бельгія
+    zh-CN: 比利时
+- capital: Brasilia
+  currency: BRL
+  currency_name: Brazilian real
+  currency_symbol: R$
+  emoji: 🇧🇷
+  emojiU: U+1F1E7 U+1F1F7
+  id: 31
+  iso2: BR
+  iso3: BRA
+  latitude: '-10.00000000'
+  longitude: '-55.00000000'
+  name: Brazil
+  nationality: Brazilian
+  native: Brasil
+  numeric_code: '076'
+  phonecode: '55'
+  region: Americas
+  region_id: 2
+  subregion: South America
+  subregion_id: 8
+  timezones:
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Araguaina
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Bahia
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Belem
+  - abbreviation: AMT
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Amazon Time (Brazil)[3
+    zoneName: America/Boa_Vista
+  - abbreviation: AMT
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Amazon Time (Brazil)[3
+    zoneName: America/Campo_Grande
+  - abbreviation: BRT
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Brasilia Time
+    zoneName: America/Cuiaba
+  - abbreviation: ACT
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Acre Time
+    zoneName: America/Eirunepe
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Fortaleza
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Maceio
+  - abbreviation: AMT
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Amazon Time (Brazil)
+    zoneName: America/Manaus
+  - abbreviation: FNT
+    gmtOffset: -7200
+    gmtOffsetName: UTC-02:00
+    tzName: Fernando de Noronha Time
+    zoneName: America/Noronha
+  - abbreviation: AMT
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Amazon Time (Brazil)[3
+    zoneName: America/Porto_Velho
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Recife
+  - abbreviation: ACT
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Acre Time
+    zoneName: America/Rio_Branco
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Santarem
+  - abbreviation: BRT
+    gmtOffset: -10800
+    gmtOffsetName: UTC-03:00
+    tzName: Brasília Time
+    zoneName: America/Sao_Paulo
+  tld: .br
+  translations:
+    de: Brasilien
+    es: Brasil
+    fa: برزیل
+    fr: Brésil
+    hr: Brazil
+    it: Brasile
+    ja: ブラジル
+    ko: 브라질
+    nl: Brazilië
+    pl: Brazylia
+    pt: Brasil
+    pt-BR: Brasil
+    ru: Бразилия
+    tr: Brezilya
+    uk: Бразилія
+    zh-CN: 巴西
+- capital: Ottawa
+  currency: CAD
+  currency_name: Canadian dollar
+  currency_symbol: $
+  emoji: 🇨🇦
+  emojiU: U+1F1E8 U+1F1E6
+  id: 39
+  iso2: CA
+  iso3: CAN
+  latitude: '60.00000000'
+  longitude: '-95.00000000'
+  name: Canada
+  nationality: Canadian
+  native: Canada
+  numeric_code: '124'
+  phonecode: '1'
+  region: Americas
+  region_id: 2
+  subregion: Northern America
+  subregion_id: 6
+  timezones:
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America)
+    zoneName: America/Atikokan
+  - abbreviation: AST
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Atlantic Standard Time
+    zoneName: America/Blanc-Sablon
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Cambridge_Bay
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Creston
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Dawson
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Dawson_Creek
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Edmonton
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America)
+    zoneName: America/Fort_Nelson
+  - abbreviation: AST
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Atlantic Standard Time
+    zoneName: America/Glace_Bay
+  - abbreviation: AST
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Atlantic Standard Time
+    zoneName: America/Goose_Bay
+  - abbreviation: AST
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Atlantic Standard Time
+    zoneName: America/Halifax
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Inuvik
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Iqaluit
+  - abbreviation: AST
+    gmtOffset: -14400
+    gmtOffsetName: UTC-04:00
+    tzName: Atlantic Standard Time
+    zoneName: America/Moncton
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Nipigon
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Pangnirtung
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Rainy_River
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Rankin_Inlet
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Regina
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Resolute
+  - abbreviation: NST
+    gmtOffset: -12600
+    gmtOffsetName: UTC-03:30
+    tzName: Newfoundland Standard Time
+    zoneName: America/St_Johns
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Swift_Current
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Thunder_Bay
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Toronto
+  - abbreviation: PST
+    gmtOffset: -28800
+    gmtOffsetName: UTC-08:00
+    tzName: Pacific Standard Time (North America
+    zoneName: America/Vancouver
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Whitehorse
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Winnipeg
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Yellowknife
+  tld: .ca
+  translations:
+    de: Kanada
+    es: Canadá
+    fa: کانادا
+    fr: Canada
+    hr: Kanada
+    it: Canada
+    ja: カナダ
+    ko: 캐나다
+    nl: Canada
+    pl: Kanada
+    pt: Canadá
+    pt-BR: Canadá
+    ru: Канада
+    tr: Kanada
+    uk: Канада
+    zh-CN: 加拿大
+- capital: Beijing
+  currency: CNY
+  currency_name: Chinese yuan
+  currency_symbol: ¥
+  emoji: 🇨🇳
+  emojiU: U+1F1E8 U+1F1F3
+  id: 45
+  iso2: CN
+  iso3: CHN
+  latitude: '35.00000000'
+  longitude: '105.00000000'
+  name: China
+  nationality: Chinese
+  native: 中国
+  numeric_code: '156'
+  phonecode: '86'
+  region: Asia
+  region_id: 3
+  subregion: Eastern Asia
+  subregion_id: 12
+  timezones:
+  - abbreviation: CST
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: China Standard Time
+    zoneName: Asia/Shanghai
+  - abbreviation: XJT
+    gmtOffset: 21600
+    gmtOffsetName: UTC+06:00
+    tzName: China Standard Time
+    zoneName: Asia/Urumqi
+  tld: .cn
+  translations:
+    de: China
+    es: China
+    fa: چین
+    fr: Chine
+    hr: Kina
+    it: Cina
+    ja: 中国
+    ko: 중국
+    nl: China
+    pl: Chiny
+    pt: China
+    pt-BR: China
+    ru: Китай
+    tr: Çin
+    uk: Китай
+    zh-CN: 中国
+- capital: Prague
+  currency: CZK
+  currency_name: Czech koruna
+  currency_symbol: Kč
+  emoji: 🇨🇿
+  emojiU: U+1F1E8 U+1F1FF
+  id: 58
+  iso2: CZ
+  iso3: CZE
+  latitude: '49.75000000'
+  longitude: '15.50000000'
+  name: Czech Republic
+  nationality: Czech
+  native: Česká republika
+  numeric_code: '203'
+  phonecode: '420'
+  region: Europe
+  region_id: 4
+  subregion: Eastern Europe
+  subregion_id: 15
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Prague
+  tld: .cz
+  translations:
+    de: Tschechische Republik
+    es: República Checa
+    fa: جمهوری چک
+    fr: République tchèque
+    hr: Češka
+    it: Repubblica Ceca
+    ja: チェコ
+    ko: 체코
+    nl: Tsjechië
+    pl: Republika Czeska
+    pt: República Checa
+    pt-BR: República Tcheca
+    ru: Чешская Республика
+    tr: Çekya
+    uk: Чеська Республіка
+    zh-CN: 捷克
+- capital: Copenhagen
+  currency: DKK
+  currency_name: Danish krone
+  currency_symbol: Kr.
+  emoji: 🇩🇰
+  emojiU: U+1F1E9 U+1F1F0
+  id: 59
+  iso2: DK
+  iso3: DNK
+  latitude: '56.00000000'
+  longitude: '10.00000000'
+  name: Denmark
+  nationality: Danish
+  native: Danmark
+  numeric_code: '208'
+  phonecode: '45'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Copenhagen
+  tld: .dk
+  translations:
+    de: Dänemark
+    es: Dinamarca
+    fa: دانمارک
+    fr: Danemark
+    hr: Danska
+    it: Danimarca
+    ja: デンマーク
+    ko: 덴마크
+    nl: Denemarken
+    pl: Dania
+    pt: Dinamarca
+    pt-BR: Dinamarca
+    ru: Дания
+    tr: Danimarka
+    uk: Данія
+    zh-CN: 丹麦
+- capital: Cairo
+  currency: EGP
+  currency_name: Egyptian pound
+  currency_symbol: ج.م
+  emoji: 🇪🇬
+  emojiU: U+1F1EA U+1F1EC
+  id: 65
+  iso2: EG
+  iso3: EGY
+  latitude: '27.00000000'
+  longitude: '30.00000000'
+  name: Egypt
+  nationality: Egyptian
+  native: مصر‎
+  numeric_code: '818'
+  phonecode: '20'
+  region: Africa
+  region_id: 1
+  subregion: Northern Africa
+  subregion_id: 1
+  timezones:
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Africa/Cairo
+  tld: .eg
+  translations:
+    de: Ägypten
+    es: Egipto
+    fa: مصر
+    fr: Égypte
+    hr: Egipat
+    it: Egitto
+    ja: エジプト
+    ko: 이집트
+    nl: Egypte
+    pl: Egipt
+    pt: Egipto
+    pt-BR: Egito
+    ru: Египет
+    tr: Mısır
+    uk: Єгипет
+    zh-CN: 埃及
+- capital: Helsinki
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇫🇮
+  emojiU: U+1F1EB U+1F1EE
+  id: 74
+  iso2: FI
+  iso3: FIN
+  latitude: '64.00000000'
+  longitude: '26.00000000'
+  name: Finland
+  nationality: Finnish
+  native: Suomi
+  numeric_code: '246'
+  phonecode: '358'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Helsinki
+  tld: .fi
+  translations:
+    de: Finnland
+    es: Finlandia
+    fa: فنلاند
+    fr: Finlande
+    hr: Finska
+    it: Finlandia
+    ja: フィンランド
+    ko: 핀란드
+    nl: Finland
+    pl: Finlandia
+    pt: Finlândia
+    pt-BR: Finlândia
+    ru: Финляндия
+    tr: Finlandiya
+    uk: Фінляндія
+    zh-CN: 芬兰
+- capital: Paris
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇫🇷
+  emojiU: U+1F1EB U+1F1F7
+  id: 75
+  iso2: FR
+  iso3: FRA
+  latitude: '46.00000000'
+  longitude: '2.00000000'
+  name: France
+  nationality: French
+  native: France
+  numeric_code: '250'
+  phonecode: '33'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Paris
+  tld: .fr
+  translations:
+    de: Frankreich
+    es: Francia
+    fa: فرانسه
+    fr: France
+    hr: Francuska
+    it: Francia
+    ja: フランス
+    ko: 프랑스
+    nl: Frankrijk
+    pl: Francja
+    pt: França
+    pt-BR: França
+    ru: Франция
+    tr: Fransa
+    uk: Франція
+    zh-CN: 法国
+- capital: Berlin
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇩🇪
+  emojiU: U+1F1E9 U+1F1EA
+  id: 82
+  iso2: DE
+  iso3: DEU
+  latitude: '51.00000000'
+  longitude: '9.00000000'
+  name: Germany
+  nationality: German
+  native: Deutschland
+  numeric_code: '276'
+  phonecode: '49'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Berlin
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Busingen
+  tld: .de
+  translations:
+    de: Deutschland
+    es: Alemania
+    fa: آلمان
+    fr: Allemagne
+    hr: Njemačka
+    it: Germania
+    ja: ドイツ
+    ko: 독일
+    nl: Duitsland
+    pl: Niemcy
+    pt: Alemanha
+    pt-BR: Alemanha
+    ru: Германия
+    tr: Almanya
+    uk: Німеччина
+    zh-CN: 德国
+- capital: Athens
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇬🇷
+  emojiU: U+1F1EC U+1F1F7
+  id: 85
+  iso2: GR
+  iso3: GRC
+  latitude: '39.00000000'
+  longitude: '22.00000000'
+  name: Greece
+  nationality: Greek, Hellenic
+  native: Ελλάδα
+  numeric_code: '300'
+  phonecode: '30'
+  region: Europe
+  region_id: 4
+  subregion: Southern Europe
+  subregion_id: 16
+  timezones:
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Athens
+  tld: .gr
+  translations:
+    de: Griechenland
+    es: Grecia
+    fa: یونان
+    fr: Grèce
+    hr: Grčka
+    it: Grecia
+    ja: ギリシャ
+    ko: 그리스
+    nl: Griekenland
+    pl: Grecja
+    pt: Grécia
+    pt-BR: Grécia
+    ru: Греция
+    tr: Yunanistan
+    uk: Греція
+    zh-CN: 希腊
+- capital: Budapest
+  currency: HUF
+  currency_name: Hungarian forint
+  currency_symbol: Ft
+  emoji: 🇭🇺
+  emojiU: U+1F1ED U+1F1FA
+  id: 99
+  iso2: HU
+  iso3: HUN
+  latitude: '47.00000000'
+  longitude: '20.00000000'
+  name: Hungary
+  nationality: Hungarian, Magyar
+  native: Magyarország
+  numeric_code: '348'
+  phonecode: '36'
+  region: Europe
+  region_id: 4
+  subregion: Eastern Europe
+  subregion_id: 15
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Budapest
+  tld: .hu
+  translations:
+    de: Ungarn
+    es: Hungría
+    fa: مجارستان
+    fr: Hongrie
+    hr: Mađarska
+    it: Ungheria
+    ja: ハンガリー
+    ko: 헝가리
+    nl: Hongarije
+    pl: Węgry
+    pt: Hungria
+    pt-BR: Hungria
+    ru: Венгрия
+    tr: Macaristan
+    uk: Угорщина
+    zh-CN: 匈牙利
+- capital: New Delhi
+  currency: INR
+  currency_name: Indian rupee
+  currency_symbol: ₹
+  emoji: 🇮🇳
+  emojiU: U+1F1EE U+1F1F3
+  id: 101
+  iso2: IN
+  iso3: IND
+  latitude: '20.00000000'
+  longitude: '77.00000000'
+  name: India
+  nationality: Indian
+  native: भारत
+  numeric_code: '356'
+  phonecode: '91'
+  region: Asia
+  region_id: 3
+  subregion: Southern Asia
+  subregion_id: 14
+  timezones:
+  - abbreviation: IST
+    gmtOffset: 19800
+    gmtOffsetName: UTC+05:30
+    tzName: Indian Standard Time
+    zoneName: Asia/Kolkata
+  tld: .in
+  translations:
+    de: Indien
+    es: India
+    fa: هند
+    fr: Inde
+    hr: Indija
+    it: India
+    ja: インド
+    ko: 인도
+    nl: India
+    pl: Indie
+    pt: Índia
+    pt-BR: Índia
+    ru: Индия
+    tr: Hindistan
+    uk: Індія
+    zh-CN: 印度
+- capital: Jakarta
+  currency: IDR
+  currency_name: Indonesian rupiah
+  currency_symbol: Rp
+  emoji: 🇮🇩
+  emojiU: U+1F1EE U+1F1E9
+  id: 102
+  iso2: ID
+  iso3: IDN
+  latitude: '-5.00000000'
+  longitude: '120.00000000'
+  name: Indonesia
+  nationality: Indonesian
+  native: Indonesia
+  numeric_code: '360'
+  phonecode: '62'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: WIB
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Western Indonesian Time
+    zoneName: Asia/Jakarta
+  - abbreviation: WIT
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Eastern Indonesian Time
+    zoneName: Asia/Jayapura
+  - abbreviation: WITA
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Central Indonesia Time
+    zoneName: Asia/Makassar
+  - abbreviation: WIB
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Western Indonesian Time
+    zoneName: Asia/Pontianak
+  tld: .id
+  translations:
+    de: Indonesien
+    es: Indonesia
+    fa: اندونزی
+    fr: Indonésie
+    hr: Indonezija
+    it: Indonesia
+    ja: インドネシア
+    ko: 인도네시아
+    nl: Indonesië
+    pl: Indonezja
+    pt: Indonésia
+    pt-BR: Indonésia
+    ru: Индонезия
+    tr: Endonezya
+    uk: Індонезія
+    zh-CN: 印度尼西亚
+- capital: Tehran
+  currency: IRR
+  currency_name: Iranian rial
+  currency_symbol: ﷼
+  emoji: 🇮🇷
+  emojiU: U+1F1EE U+1F1F7
+  id: 103
+  iso2: IR
+  iso3: IRN
+  latitude: '32.00000000'
+  longitude: '53.00000000'
+  name: Iran
+  nationality: Iranian, Persian
+  native: ایران
+  numeric_code: '364'
+  phonecode: '98'
+  region: Asia
+  region_id: 3
+  subregion: Southern Asia
+  subregion_id: 14
+  timezones:
+  - abbreviation: IRDT
+    gmtOffset: 12600
+    gmtOffsetName: UTC+03:30
+    tzName: Iran Daylight Time
+    zoneName: Asia/Tehran
+  tld: .ir
+  translations:
+    de: Iran
+    es: Iran
+    fa: ایران
+    fr: Iran
+    hr: Iran
+    ja: イラン・イスラム共和国
+    ko: 이란
+    nl: Iran
+    pl: Iran
+    pt: Irão
+    pt-BR: Irã
+    ru: Иран
+    tr: İran
+    uk: Іран
+    zh-CN: 伊朗
+- capital: Baghdad
+  currency: IQD
+  currency_name: Iraqi dinar
+  currency_symbol: د.ع
+  emoji: 🇮🇶
+  emojiU: U+1F1EE U+1F1F6
+  id: 104
+  iso2: IQ
+  iso3: IRQ
+  latitude: '33.00000000'
+  longitude: '44.00000000'
+  name: Iraq
+  nationality: Iraqi
+  native: العراق
+  numeric_code: '368'
+  phonecode: '964'
+  region: Asia
+  region_id: 3
+  subregion: Western Asia
+  subregion_id: 11
+  timezones:
+  - abbreviation: AST
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Arabia Standard Time
+    zoneName: Asia/Baghdad
+  tld: .iq
+  translations:
+    de: Irak
+    es: Irak
+    fa: عراق
+    fr: Irak
+    hr: Irak
+    it: Iraq
+    ja: イラク
+    ko: 이라크
+    nl: Irak
+    pl: Irak
+    pt: Iraque
+    pt-BR: Iraque
+    ru: Ирак
+    tr: Irak
+    uk: Ірак
+    zh-CN: 伊拉克
+- capital: Dublin
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇮🇪
+  emojiU: U+1F1EE U+1F1EA
+  id: 105
+  iso2: IE
+  iso3: IRL
+  latitude: '53.00000000'
+  longitude: '-8.00000000'
+  name: Ireland
+  nationality: Irish
+  native: Éire
+  numeric_code: '372'
+  phonecode: '353'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: GMT
+    gmtOffset: 0
+    gmtOffsetName: UTC±00
+    tzName: Greenwich Mean Time
+    zoneName: Europe/Dublin
+  tld: .ie
+  translations:
+    de: Irland
+    es: Irlanda
+    fa: ایرلند
+    fr: Irlande
+    hr: Irska
+    it: Irlanda
+    ja: アイルランド
+    ko: 아일랜드
+    nl: Ierland
+    pl: Irlandia
+    pt: Irlanda
+    pt-BR: Irlanda
+    ru: Ирландия
+    tr: İrlanda
+    uk: Ірландія
+    zh-CN: 爱尔兰
+- capital: Jerusalem
+  currency: ILS
+  currency_name: Israeli new shekel
+  currency_symbol: ₪
+  emoji: 🇮🇱
+  emojiU: U+1F1EE U+1F1F1
+  id: 106
+  iso2: IL
+  iso3: ISR
+  latitude: '31.50000000'
+  longitude: '34.75000000'
+  name: Israel
+  nationality: Israeli
+  native: יִשְׂרָאֵל
+  numeric_code: '376'
+  phonecode: '972'
+  region: Asia
+  region_id: 3
+  subregion: Western Asia
+  subregion_id: 11
+  timezones:
+  - abbreviation: IST
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Israel Standard Time
+    zoneName: Asia/Jerusalem
+  tld: .il
+  translations:
+    de: Israel
+    es: Israel
+    fa: اسرائیل
+    fr: Israël
+    hr: Izrael
+    it: Israele
+    ja: イスラエル
+    ko: 이스라엘
+    nl: Israël
+    pl: Izrael
+    pt: Israel
+    pt-BR: Israel
+    ru: Израиль
+    tr: İsrail
+    uk: Ізраїль
+    zh-CN: 以色列
+- capital: Rome
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇮🇹
+  emojiU: U+1F1EE U+1F1F9
+  id: 107
+  iso2: IT
+  iso3: ITA
+  latitude: '42.83333333'
+  longitude: '12.83333333'
+  name: Italy
+  nationality: Italian
+  native: Italia
+  numeric_code: '380'
+  phonecode: '39'
+  region: Europe
+  region_id: 4
+  subregion: Southern Europe
+  subregion_id: 16
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Rome
+  tld: .it
+  translations:
+    de: Italien
+    es: Italia
+    fa: ایتالیا
+    fr: Italie
+    hr: Italija
+    it: Italia
+    ja: イタリア
+    ko: 이탈리아
+    nl: Italië
+    pl: Włochy
+    pt: Itália
+    pt-BR: Itália
+    ru: Италия
+    tr: İtalya
+    uk: Італія
+    zh-CN: 意大利
+- capital: Tokyo
+  currency: JPY
+  currency_name: Japanese yen
+  currency_symbol: ¥
+  emoji: 🇯🇵
+  emojiU: U+1F1EF U+1F1F5
+  id: 109
+  iso2: JP
+  iso3: JPN
+  latitude: '36.00000000'
+  longitude: '138.00000000'
+  name: Japan
+  nationality: Japanese
+  native: 日本
+  numeric_code: '392'
+  phonecode: '81'
+  region: Asia
+  region_id: 3
+  subregion: Eastern Asia
+  subregion_id: 12
+  timezones:
+  - abbreviation: JST
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Japan Standard Time
+    zoneName: Asia/Tokyo
+  tld: .jp
+  translations:
+    de: Japan
+    es: Japón
+    fa: ژاپن
+    fr: Japon
+    hr: Japan
+    it: Giappone
+    ja: 日本
+    ko: 일본
+    nl: Japan
+    pl: Japonia
+    pt: Japão
+    pt-BR: Japão
+    ru: Япония
+    tr: Japonya
+    uk: Японія
+    zh-CN: 日本
+- capital: Kuala Lumpur
+  currency: MYR
+  currency_name: Malaysian ringgit
+  currency_symbol: RM
+  emoji: 🇲🇾
+  emojiU: U+1F1F2 U+1F1FE
+  id: 132
+  iso2: MY
+  iso3: MYS
+  latitude: '2.50000000'
+  longitude: '112.50000000'
+  name: Malaysia
+  nationality: Malaysian
+  native: Malaysia
+  numeric_code: '458'
+  phonecode: '60'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: MYT
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Malaysia Time
+    zoneName: Asia/Kuala_Lumpur
+  - abbreviation: MYT
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Malaysia Time
+    zoneName: Asia/Kuching
+  tld: .my
+  translations:
+    de: Malaysia
+    es: Malasia
+    fa: مالزی
+    fr: Malaisie
+    hr: Malezija
+    it: Malesia
+    ja: マレーシア
+    ko: 말레이시아
+    nl: Maleisië
+    pl: Malezja
+    pt: Malásia
+    pt-BR: Malásia
+    ru: Малайзия
+    tr: Malezya
+    uk: Малайзія
+    zh-CN: 马来西亚
+- capital: Ciudad de México
+  currency: MXN
+  currency_name: Mexican peso
+  currency_symbol: $
+  emoji: 🇲🇽
+  emojiU: U+1F1F2 U+1F1FD
+  id: 142
+  iso2: MX
+  iso3: MEX
+  latitude: '23.00000000'
+  longitude: '-102.00000000'
+  name: Mexico
+  nationality: Mexican
+  native: México
+  numeric_code: '484'
+  phonecode: '52'
+  region: Americas
+  region_id: 2
+  subregion: Northern America
+  subregion_id: 6
+  timezones:
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Bahia_Banderas
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Cancun
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Chihuahua
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Hermosillo
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Matamoros
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Mazatlan
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Merida
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Mexico_City
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Monterrey
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Ojinaga
+  - abbreviation: PST
+    gmtOffset: -28800
+    gmtOffsetName: UTC-08:00
+    tzName: Pacific Standard Time (North America
+    zoneName: America/Tijuana
+  tld: .mx
+  translations:
+    de: Mexiko
+    es: México
+    fa: مکزیک
+    fr: Mexique
+    hr: Meksiko
+    it: Messico
+    ja: メキシコ
+    ko: 멕시코
+    nl: Mexico
+    pl: Meksyk
+    pt: México
+    pt-BR: México
+    ru: Мексика
+    tr: Meksika
+    uk: Мексика
+    zh-CN: 墨西哥
+- capital: Amsterdam
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇳🇱
+  emojiU: U+1F1F3 U+1F1F1
+  id: 156
+  iso2: NL
+  iso3: NLD
+  latitude: '52.50000000'
+  longitude: '5.75000000'
+  name: Netherlands
+  nationality: Dutch, Netherlandic
+  native: Nederland
+  numeric_code: '528'
+  phonecode: '31'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Amsterdam
+  tld: .nl
+  translations:
+    de: Niederlande
+    es: Países Bajos
+    fa: پادشاهی هلند
+    fr: Pays-Bas
+    hr: Nizozemska
+    it: Paesi Bassi
+    ja: オランダ
+    ko: '네덜란드 '
+    nl: Nederland
+    pl: Holandia
+    pt: Países Baixos
+    pt-BR: Holanda
+    ru: Нидерланды
+    tr: Hollanda
+    uk: Нідерланди
+    zh-CN: 荷兰
+- capital: Wellington
+  currency: NZD
+  currency_name: New Zealand dollar
+  currency_symbol: $
+  emoji: 🇳🇿
+  emojiU: U+1F1F3 U+1F1FF
+  id: 158
+  iso2: NZ
+  iso3: NZL
+  latitude: '-41.00000000'
+  longitude: '174.00000000'
+  name: New Zealand
+  nationality: New Zealand, NZ
+  native: New Zealand
+  numeric_code: '554'
+  phonecode: '64'
+  region: Oceania
+  region_id: 5
+  subregion: Australia and New Zealand
+  subregion_id: 19
+  timezones:
+  - abbreviation: NZDT
+    gmtOffset: 46800
+    gmtOffsetName: UTC+13:00
+    tzName: New Zealand Daylight Time
+    zoneName: Pacific/Auckland
+  - abbreviation: CHAST
+    gmtOffset: 49500
+    gmtOffsetName: UTC+13:45
+    tzName: Chatham Standard Time
+    zoneName: Pacific/Chatham
+  tld: .nz
+  translations:
+    de: Neuseeland
+    es: Nueva Zelanda
+    fa: نیوزیلند
+    fr: Nouvelle-Zélande
+    hr: Novi Zeland
+    it: Nuova Zelanda
+    ja: ニュージーランド
+    ko: 뉴질랜드
+    nl: Nieuw-Zeeland
+    pl: Nowa Zelandia
+    pt: Nova Zelândia
+    pt-BR: Nova Zelândia
+    ru: Новая Зеландия
+    tr: Yeni Zelanda
+    uk: Нова Зеландія
+    zh-CN: 新西兰
+- capital: Oslo
+  currency: NOK
+  currency_name: Norwegian krone
+  currency_symbol: ko
+  emoji: 🇳🇴
+  emojiU: U+1F1F3 U+1F1F4
+  id: 165
+  iso2: 'NO'
+  iso3: NOR
+  latitude: '62.00000000'
+  longitude: '10.00000000'
+  name: Norway
+  nationality: Norwegian
+  native: Norge
+  numeric_code: '578'
+  phonecode: '47'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Oslo
+  tld: .no
+  translations:
+    de: Norwegen
+    es: Noruega
+    fa: نروژ
+    fr: Norvège
+    hr: Norveška
+    it: Norvegia
+    ja: ノルウェー
+    ko: 노르웨이
+    nl: Noorwegen
+    pl: Norwegia
+    pt: Noruega
+    pt-BR: Noruega
+    ru: Норвегия
+    tr: Norveç
+    uk: Норвегія
+    zh-CN: 挪威
+- capital: Islamabad
+  currency: PKR
+  currency_name: Pakistani rupee
+  currency_symbol: ₨
+  emoji: 🇵🇰
+  emojiU: U+1F1F5 U+1F1F0
+  id: 167
+  iso2: PK
+  iso3: PAK
+  latitude: '30.00000000'
+  longitude: '70.00000000'
+  name: Pakistan
+  nationality: Pakistani
+  native: پاکستان
+  numeric_code: '586'
+  phonecode: '92'
+  region: Asia
+  region_id: 3
+  subregion: Southern Asia
+  subregion_id: 14
+  timezones:
+  - abbreviation: PKT
+    gmtOffset: 18000
+    gmtOffsetName: UTC+05:00
+    tzName: Pakistan Standard Time
+    zoneName: Asia/Karachi
+  tld: .pk
+  translations:
+    de: Pakistan
+    es: Pakistán
+    fa: پاکستان
+    fr: Pakistan
+    hr: Pakistan
+    it: Pakistan
+    ja: パキスタン
+    ko: 파키스탄
+    nl: Pakistan
+    pl: Pakistan
+    pt: Paquistão
+    pt-BR: Paquistão
+    ru: Пакистан
+    tr: Pakistan
+    uk: Пакистан
+    zh-CN: 巴基斯坦
+- capital: Manila
+  currency: PHP
+  currency_name: Philippine peso
+  currency_symbol: ₱
+  emoji: 🇵🇭
+  emojiU: U+1F1F5 U+1F1ED
+  id: 174
+  iso2: PH
+  iso3: PHL
+  latitude: '13.00000000'
+  longitude: '122.00000000'
+  name: Philippines
+  nationality: Philippine, Filipino
+  native: Pilipinas
+  numeric_code: '608'
+  phonecode: '63'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: PHT
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Philippine Time
+    zoneName: Asia/Manila
+  tld: .ph
+  translations:
+    de: Philippinen
+    es: Filipinas
+    fa: جزایر الندفیلیپین
+    fr: Philippines
+    hr: Filipini
+    it: Filippine
+    ja: フィリピン
+    ko: 필리핀
+    nl: Filipijnen
+    pl: Filipiny
+    pt: Filipinas
+    pt-BR: Filipinas
+    ru: Филиппины
+    tr: Filipinler
+    uk: Філіппіни
+    zh-CN: 菲律宾
+- capital: Warsaw
+  currency: PLN
+  currency_name: Polish złoty
+  currency_symbol: zł
+  emoji: 🇵🇱
+  emojiU: U+1F1F5 U+1F1F1
+  id: 176
+  iso2: PL
+  iso3: POL
+  latitude: '52.00000000'
+  longitude: '20.00000000'
+  name: Poland
+  nationality: Polish
+  native: Polska
+  numeric_code: '616'
+  phonecode: '48'
+  region: Europe
+  region_id: 4
+  subregion: Eastern Europe
+  subregion_id: 15
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Warsaw
+  tld: .pl
+  translations:
+    de: Polen
+    es: Polonia
+    fa: لهستان
+    fr: Pologne
+    hr: Poljska
+    it: Polonia
+    ja: ポーランド
+    ko: 폴란드
+    nl: Polen
+    pl: Polska
+    pt: Polónia
+    pt-BR: Polônia
+    ru: Польша
+    tr: Polonya
+    uk: Польща
+    zh-CN: 波兰
+- capital: Lisbon
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇵🇹
+  emojiU: U+1F1F5 U+1F1F9
+  id: 177
+  iso2: PT
+  iso3: PRT
+  latitude: '39.50000000'
+  longitude: '-8.00000000'
+  name: Portugal
+  nationality: Portuguese
+  native: Portugal
+  numeric_code: '620'
+  phonecode: '351'
+  region: Europe
+  region_id: 4
+  subregion: Southern Europe
+  subregion_id: 16
+  timezones:
+  - abbreviation: AZOT
+    gmtOffset: -3600
+    gmtOffsetName: UTC-01:00
+    tzName: Azores Standard Time
+    zoneName: Atlantic/Azores
+  - abbreviation: WET
+    gmtOffset: 0
+    gmtOffsetName: UTC±00
+    tzName: Western European Time
+    zoneName: Atlantic/Madeira
+  - abbreviation: WET
+    gmtOffset: 0
+    gmtOffsetName: UTC±00
+    tzName: Western European Time
+    zoneName: Europe/Lisbon
+  tld: .pt
+  translations:
+    de: Portugal
+    es: Portugal
+    fa: پرتغال
+    fr: Portugal
+    hr: Portugal
+    it: Portogallo
+    ja: ポルトガル
+    ko: 포르투갈
+    nl: Portugal
+    pl: Portugalia
+    pt: Portugal
+    pt-BR: Portugal
+    ru: Португалия
+    tr: Portekiz
+    uk: Португалія
+    zh-CN: 葡萄牙
+- capital: Moscow
+  currency: RUB
+  currency_name: Russian ruble
+  currency_symbol: ₽
+  emoji: 🇷🇺
+  emojiU: U+1F1F7 U+1F1FA
+  id: 182
+  iso2: RU
+  iso3: RUS
+  latitude: '60.00000000'
+  longitude: '100.00000000'
+  name: Russia
+  nationality: Russian
+  native: Россия
+  numeric_code: '643'
+  phonecode: '7'
+  region: Europe
+  region_id: 4
+  subregion: Eastern Europe
+  subregion_id: 15
+  timezones:
+  - abbreviation: ANAT
+    gmtOffset: 43200
+    gmtOffsetName: UTC+12:00
+    tzName: Anadyr Time[4
+    zoneName: Asia/Anadyr
+  - abbreviation: KRAT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Krasnoyarsk Time
+    zoneName: Asia/Barnaul
+  - abbreviation: YAKT
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Yakutsk Time
+    zoneName: Asia/Chita
+  - abbreviation: IRKT
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Irkutsk Time
+    zoneName: Asia/Irkutsk
+  - abbreviation: PETT
+    gmtOffset: 43200
+    gmtOffsetName: UTC+12:00
+    tzName: Kamchatka Time
+    zoneName: Asia/Kamchatka
+  - abbreviation: YAKT
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Yakutsk Time
+    zoneName: Asia/Khandyga
+  - abbreviation: KRAT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Krasnoyarsk Time
+    zoneName: Asia/Krasnoyarsk
+  - abbreviation: MAGT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Magadan Time
+    zoneName: Asia/Magadan
+  - abbreviation: KRAT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Krasnoyarsk Time
+    zoneName: Asia/Novokuznetsk
+  - abbreviation: NOVT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Novosibirsk Time
+    zoneName: Asia/Novosibirsk
+  - abbreviation: OMST
+    gmtOffset: 21600
+    gmtOffsetName: UTC+06:00
+    tzName: Omsk Time
+    zoneName: Asia/Omsk
+  - abbreviation: SAKT
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Sakhalin Island Time
+    zoneName: Asia/Sakhalin
+  - abbreviation: SRET
+    gmtOffset: 39600
+    gmtOffsetName: UTC+11:00
+    tzName: Srednekolymsk Time
+    zoneName: Asia/Srednekolymsk
+  - abbreviation: MSD+3
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Moscow Daylight Time+3
+    zoneName: Asia/Tomsk
+  - abbreviation: VLAT
+    gmtOffset: 36000
+    gmtOffsetName: UTC+10:00
+    tzName: Vladivostok Time
+    zoneName: Asia/Ust-Nera
+  - abbreviation: VLAT
+    gmtOffset: 36000
+    gmtOffsetName: UTC+10:00
+    tzName: Vladivostok Time
+    zoneName: Asia/Vladivostok
+  - abbreviation: YAKT
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Yakutsk Time
+    zoneName: Asia/Yakutsk
+  - abbreviation: YEKT
+    gmtOffset: 18000
+    gmtOffsetName: UTC+05:00
+    tzName: Yekaterinburg Time
+    zoneName: Asia/Yekaterinburg
+  - abbreviation: SAMT
+    gmtOffset: 14400
+    gmtOffsetName: UTC+04:00
+    tzName: Samara Time
+    zoneName: Europe/Astrakhan
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Kaliningrad
+  - abbreviation: MSK
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Moscow Time
+    zoneName: Europe/Kirov
+  - abbreviation: MSK
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Moscow Time
+    zoneName: Europe/Moscow
+  - abbreviation: SAMT
+    gmtOffset: 14400
+    gmtOffsetName: UTC+04:00
+    tzName: Samara Time
+    zoneName: Europe/Samara
+  - abbreviation: MSD
+    gmtOffset: 14400
+    gmtOffsetName: UTC+04:00
+    tzName: Moscow Daylight Time+4
+    zoneName: Europe/Saratov
+  - abbreviation: SAMT
+    gmtOffset: 14400
+    gmtOffsetName: UTC+04:00
+    tzName: Samara Time
+    zoneName: Europe/Ulyanovsk
+  - abbreviation: MSK
+    gmtOffset: 14400
+    gmtOffsetName: UTC+04:00
+    tzName: Moscow Standard Time
+    zoneName: Europe/Volgograd
+  tld: .ru
+  translations:
+    de: Russland
+    es: Rusia
+    fa: روسیه
+    fr: Russie
+    hr: Rusija
+    it: Russia
+    ja: ロシア連邦
+    ko: 러시아
+    nl: Rusland
+    pl: Rosja
+    pt: Rússia
+    pt-BR: Rússia
+    ru: Россия
+    tr: Rusya
+    uk: Росія
+    zh-CN: 俄罗斯联邦
+- capital: Riyadh
+  currency: SAR
+  currency_name: Saudi riyal
+  currency_symbol: ﷼
+  emoji: 🇸🇦
+  emojiU: U+1F1F8 U+1F1E6
+  id: 194
+  iso2: SA
+  iso3: SAU
+  latitude: '25.00000000'
+  longitude: '45.00000000'
+  name: Saudi Arabia
+  nationality: Saudi, Saudi Arabian
+  native: المملكة العربية السعودية
+  numeric_code: '682'
+  phonecode: '966'
+  region: Asia
+  region_id: 3
+  subregion: Western Asia
+  subregion_id: 11
+  timezones:
+  - abbreviation: AST
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Arabia Standard Time
+    zoneName: Asia/Riyadh
+  tld: .sa
+  translations:
+    de: Saudi-Arabien
+    es: Arabia Saudí
+    fa: عربستان سعودی
+    fr: Arabie Saoudite
+    hr: Saudijska Arabija
+    it: Arabia Saudita
+    ja: サウジアラビア
+    ko: 사우디아라비아
+    nl: Saoedi-Arabië
+    pl: Arabia Saudyjska
+    pt: Arábia Saudita
+    pt-BR: Arábia Saudita
+    ru: Саудовская Аравия
+    tr: Suudi Arabistan
+    uk: Саудівська Аравія
+    zh-CN: 沙特阿拉伯
+- capital: Singapur
+  currency: SGD
+  currency_name: Singapore dollar
+  currency_symbol: $
+  emoji: 🇸🇬
+  emojiU: U+1F1F8 U+1F1EC
+  id: 199
+  iso2: SG
+  iso3: SGP
+  latitude: '1.36666666'
+  longitude: '103.80000000'
+  name: Singapore
+  nationality: Singaporean
+  native: Singapore
+  numeric_code: '702'
+  phonecode: '65'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: SGT
+    gmtOffset: 28800
+    gmtOffsetName: UTC+08:00
+    tzName: Singapore Time
+    zoneName: Asia/Singapore
+  tld: .sg
+  translations:
+    de: Singapur
+    es: Singapur
+    fa: سنگاپور
+    fr: Singapour
+    hr: Singapur
+    it: Singapore
+    ja: シンガポール
+    ko: 싱가포르
+    nl: Singapore
+    pl: Singapur
+    pt: Singapura
+    pt-BR: Singapura
+    ru: Сингапур
+    tr: Singapur
+    uk: Сінгапур
+    zh-CN: 新加坡
+- capital: Pretoria
+  currency: ZAR
+  currency_name: South African rand
+  currency_symbol: R
+  emoji: 🇿🇦
+  emojiU: U+1F1FF U+1F1E6
+  id: 204
+  iso2: ZA
+  iso3: ZAF
+  latitude: '-29.00000000'
+  longitude: '24.00000000'
+  name: South Africa
+  nationality: South African
+  native: South Africa
+  numeric_code: '710'
+  phonecode: '27'
+  region: Africa
+  region_id: 1
+  subregion: Southern Africa
+  subregion_id: 5
+  timezones:
+  - abbreviation: SAST
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: South African Standard Time
+    zoneName: Africa/Johannesburg
+  tld: .za
+  translations:
+    de: Republik Südafrika
+    es: República de Sudáfrica
+    fa: آفریقای جنوبی
+    fr: Afrique du Sud
+    hr: Južnoafrička Republika
+    it: Sud Africa
+    ja: 南アフリカ
+    ko: 남아프리카 공화국
+    nl: Zuid-Afrika
+    pl: Republika Południowej Afryki
+    pt: República Sul-Africana
+    pt-BR: República Sul-Africana
+    ru: Южная Африка
+    tr: Güney Afrika Cumhuriyeti
+    uk: Південна Африка
+    zh-CN: 南非
+- capital: Seoul
+  currency: KRW
+  currency_name: Won
+  currency_symbol: ₩
+  emoji: 🇰🇷
+  emojiU: U+1F1F0 U+1F1F7
+  id: 116
+  iso2: KR
+  iso3: KOR
+  latitude: '37.00000000'
+  longitude: '127.50000000'
+  name: South Korea
+  nationality: South Korean
+  native: 대한민국
+  numeric_code: '410'
+  phonecode: '82'
+  region: Asia
+  region_id: 3
+  subregion: Eastern Asia
+  subregion_id: 12
+  timezones:
+  - abbreviation: KST
+    gmtOffset: 32400
+    gmtOffsetName: UTC+09:00
+    tzName: Korea Standard Time
+    zoneName: Asia/Seoul
+  tld: .kr
+  translations:
+    de: Südkorea
+    es: Corea del Sur
+    fa: کره شمالی
+    fr: Corée du Sud
+    hr: Južna Koreja
+    it: Corea del Sud
+    ja: 大韓民国
+    ko: 대한민국
+    nl: Zuid-Korea
+    pl: Korea Południowa
+    pt: Coreia do Sul
+    pt-BR: Coreia do Sul
+    ru: Южная Корея
+    tr: Güney Kore
+    uk: Південна Корея
+    zh-CN: 韩国
+- capital: Madrid
+  currency: EUR
+  currency_name: Euro
+  currency_symbol: €
+  emoji: 🇪🇸
+  emojiU: U+1F1EA U+1F1F8
+  id: 207
+  iso2: ES
+  iso3: ESP
+  latitude: '40.00000000'
+  longitude: '-4.00000000'
+  name: Spain
+  nationality: Spanish
+  native: España
+  numeric_code: '724'
+  phonecode: '34'
+  region: Europe
+  region_id: 4
+  subregion: Southern Europe
+  subregion_id: 16
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Africa/Ceuta
+  - abbreviation: WET
+    gmtOffset: 0
+    gmtOffsetName: UTC±00
+    tzName: Western European Time
+    zoneName: Atlantic/Canary
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Madrid
+  tld: .es
+  translations:
+    de: Spanien
+    es: España
+    fa: اسپانیا
+    fr: Espagne
+    hr: Španjolska
+    it: Spagna
+    ja: スペイン
+    ko: 스페인
+    nl: Spanje
+    pl: Hiszpania
+    pt: Espanha
+    pt-BR: Espanha
+    ru: Испания
+    tr: İspanya
+    uk: Іспанія
+    zh-CN: 西班牙
+- capital: Stockholm
+  currency: SEK
+  currency_name: Swedish krona
+  currency_symbol: ko
+  emoji: 🇸🇪
+  emojiU: U+1F1F8 U+1F1EA
+  id: 213
+  iso2: SE
+  iso3: SWE
+  latitude: '62.00000000'
+  longitude: '15.00000000'
+  name: Sweden
+  nationality: Swedish
+  native: Sverige
+  numeric_code: '752'
+  phonecode: '46'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Stockholm
+  tld: .se
+  translations:
+    de: Schweden
+    es: Suecia
+    fa: سوئد
+    fr: Suède
+    hr: Švedska
+    it: Svezia
+    ja: スウェーデン
+    ko: 스웨덴
+    nl: Zweden
+    pl: Szwecja
+    pt: Suécia
+    pt-BR: Suécia
+    ru: Швеция
+    tr: İsveç
+    uk: Швеція
+    zh-CN: 瑞典
+- capital: Bern
+  currency: CHF
+  currency_name: Swiss franc
+  currency_symbol: CHf
+  emoji: 🇨🇭
+  emojiU: U+1F1E8 U+1F1ED
+  id: 214
+  iso2: CH
+  iso3: CHE
+  latitude: '47.00000000'
+  longitude: '8.00000000'
+  name: Switzerland
+  nationality: Swiss
+  native: Schweiz
+  numeric_code: '756'
+  phonecode: '41'
+  region: Europe
+  region_id: 4
+  subregion: Western Europe
+  subregion_id: 17
+  timezones:
+  - abbreviation: CET
+    gmtOffset: 3600
+    gmtOffsetName: UTC+01:00
+    tzName: Central European Time
+    zoneName: Europe/Zurich
+  tld: .ch
+  translations:
+    de: Schweiz
+    es: Suiza
+    fa: سوئیس
+    fr: Suisse
+    hr: Švicarska
+    it: Svizzera
+    ja: スイス
+    ko: 스위스
+    nl: Zwitserland
+    pl: Szwajcaria
+    pt: Suíça
+    pt-BR: Suíça
+    ru: Швейцария
+    tr: İsviçre
+    uk: Швейцарія
+    zh-CN: 瑞士
+- capital: Bangkok
+  currency: THB
+  currency_name: Thai baht
+  currency_symbol: ฿
+  emoji: 🇹🇭
+  emojiU: U+1F1F9 U+1F1ED
+  id: 219
+  iso2: TH
+  iso3: THA
+  latitude: '15.00000000'
+  longitude: '100.00000000'
+  name: Thailand
+  nationality: Thai
+  native: ประเทศไทย
+  numeric_code: '764'
+  phonecode: '66'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: ICT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Indochina Time
+    zoneName: Asia/Bangkok
+  tld: .th
+  translations:
+    de: Thailand
+    es: Tailandia
+    fa: تایلند
+    fr: Thaïlande
+    hr: Tajland
+    it: Tailandia
+    ja: タイ
+    ko: 태국
+    nl: Thailand
+    pl: Tajlandia
+    pt: Tailândia
+    pt-BR: Tailândia
+    ru: Таиланд
+    tr: Tayland
+    uk: Таїланд
+    zh-CN: 泰国
+- capital: Ankara
+  currency: TRY
+  currency_name: Turkish lira
+  currency_symbol: ₺
+  emoji: 🇹🇷
+  emojiU: U+1F1F9 U+1F1F7
+  id: 225
+  iso2: TR
+  iso3: TUR
+  latitude: '39.00000000'
+  longitude: '35.00000000'
+  name: Turkey
+  nationality: Turkish
+  native: Türkiye
+  numeric_code: '792'
+  phonecode: '90'
+  region: Asia
+  region_id: 3
+  subregion: Western Asia
+  subregion_id: 11
+  timezones:
+  - abbreviation: EET
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Eastern European Time
+    zoneName: Europe/Istanbul
+  tld: .tr
+  translations:
+    de: Türkei
+    es: Turquía
+    fa: ترکیه
+    fr: Turquie
+    hr: Turska
+    it: Turchia
+    ja: トルコ
+    ko: 터키
+    nl: Turkije
+    pl: Turcja
+    pt: Turquia
+    pt-BR: Turquia
+    ru: Турция
+    tr: Türkiye
+    uk: Туреччина
+    zh-CN: 土耳其
+- capital: Kyiv
+  currency: UAH
+  currency_name: Ukrainian hryvnia
+  currency_symbol: ₴
+  emoji: 🇺🇦
+  emojiU: U+1F1FA U+1F1E6
+  id: 230
+  iso2: UA
+  iso3: UKR
+  latitude: '49.00000000'
+  longitude: '32.00000000'
+  name: Ukraine
+  nationality: Ukrainian
+  native: Україна
+  numeric_code: '804'
+  phonecode: '380'
+  region: Europe
+  region_id: 4
+  subregion: Eastern Europe
+  subregion_id: 15
+  timezones:
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Kiev
+  - abbreviation: MSK
+    gmtOffset: 10800
+    gmtOffsetName: UTC+03:00
+    tzName: Moscow Time
+    zoneName: Europe/Simferopol
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Uzhgorod
+  - abbreviation: EET
+    gmtOffset: 7200
+    gmtOffsetName: UTC+02:00
+    tzName: Eastern European Time
+    zoneName: Europe/Zaporozhye
+  tld: .ua
+  translations:
+    de: Ukraine
+    es: Ucrania
+    fa: وکراین
+    fr: Ukraine
+    hr: Ukrajina
+    it: Ucraina
+    ja: ウクライナ
+    ko: 우크라이나
+    nl: Oekraïne
+    pl: Ukraina
+    pt: Ucrânia
+    pt-BR: Ucrânia
+    ru: Украина
+    tr: Ukrayna
+    uk: Україна
+    zh-CN: 乌克兰
+- capital: London
+  currency: GBP
+  currency_name: British pound
+  currency_symbol: £
+  emoji: 🇬🇧
+  emojiU: U+1F1EC U+1F1E7
+  id: 232
+  iso2: GB
+  iso3: GBR
+  latitude: '54.00000000'
+  longitude: '-2.00000000'
+  name: United Kingdom
+  nationality: British, UK
+  native: United Kingdom
+  numeric_code: '826'
+  phonecode: '44'
+  region: Europe
+  region_id: 4
+  subregion: Northern Europe
+  subregion_id: 18
+  timezones:
+  - abbreviation: GMT
+    gmtOffset: 0
+    gmtOffsetName: UTC±00
+    tzName: Greenwich Mean Time
+    zoneName: Europe/London
+  tld: .uk
+  translations:
+    de: Vereinigtes Königreich
+    es: Reino Unido
+    fa: بریتانیای کبیر و ایرلند شمالی
+    fr: Royaume-Uni
+    hr: Ujedinjeno Kraljevstvo
+    it: Regno Unito
+    ja: イギリス
+    ko: 영국
+    nl: Verenigd Koninkrijk
+    pl: Wielka Brytania
+    pt: Reino Unido
+    pt-BR: Reino Unido
+    ru: Великобритания
+    tr: Birleşik Krallik
+    uk: Сполучене Королівство
+    zh-CN: 英国
+- capital: Washington
+  currency: USD
+  currency_name: United States dollar
+  currency_symbol: $
+  emoji: 🇺🇸
+  emojiU: U+1F1FA U+1F1F8
+  id: 233
+  iso2: US
+  iso3: USA
+  latitude: '38.00000000'
+  longitude: '-97.00000000'
+  name: United States
+  nationality: American
+  native: United States
+  numeric_code: '840'
+  phonecode: '1'
+  region: Americas
+  region_id: 2
+  subregion: Northern America
+  subregion_id: 6
+  timezones:
+  - abbreviation: HST
+    gmtOffset: -36000
+    gmtOffsetName: UTC-10:00
+    tzName: Hawaii–Aleutian Standard Time
+    zoneName: America/Adak
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Anchorage
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Boise
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Chicago
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Denver
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Detroit
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Indianapolis
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Indiana/Knox
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Marengo
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Petersburg
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Indiana/Tell_City
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Vevay
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Vincennes
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Indiana/Winamac
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Juneau
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Kentucky/Louisville
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/Kentucky/Monticello
+  - abbreviation: PST
+    gmtOffset: -28800
+    gmtOffsetName: UTC-08:00
+    tzName: Pacific Standard Time (North America
+    zoneName: America/Los_Angeles
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/Menominee
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Metlakatla
+  - abbreviation: EST
+    gmtOffset: -18000
+    gmtOffsetName: UTC-05:00
+    tzName: Eastern Standard Time (North America
+    zoneName: America/New_York
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Nome
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/North_Dakota/Beulah
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/North_Dakota/Center
+  - abbreviation: CST
+    gmtOffset: -21600
+    gmtOffsetName: UTC-06:00
+    tzName: Central Standard Time (North America
+    zoneName: America/North_Dakota/New_Salem
+  - abbreviation: MST
+    gmtOffset: -25200
+    gmtOffsetName: UTC-07:00
+    tzName: Mountain Standard Time (North America
+    zoneName: America/Phoenix
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Sitka
+  - abbreviation: AKST
+    gmtOffset: -32400
+    gmtOffsetName: UTC-09:00
+    tzName: Alaska Standard Time
+    zoneName: America/Yakutat
+  - abbreviation: HST
+    gmtOffset: -36000
+    gmtOffsetName: UTC-10:00
+    tzName: Hawaii–Aleutian Standard Time
+    zoneName: Pacific/Honolulu
+  tld: .us
+  translations:
+    de: Vereinigte Staaten von Amerika
+    es: Estados Unidos
+    fa: ایالات متحده آمریکا
+    fr: États-Unis
+    hr: Sjedinjene Američke Države
+    it: Stati Uniti D'America
+    ja: アメリカ合衆国
+    ko: 미국
+    nl: Verenigde Staten
+    pl: Stany Zjednoczone
+    pt: Estados Unidos
+    pt-BR: Estados Unidos
+    ru: Соединенные Штаты
+    tr: Amerika
+    uk: Сполучені Штати
+    zh-CN: 美国
+- capital: Hanoi
+  currency: VND
+  currency_name: Vietnamese đồng
+  currency_symbol: ₫
+  emoji: 🇻🇳
+  emojiU: U+1F1FB U+1F1F3
+  id: 240
+  iso2: VN
+  iso3: VNM
+  latitude: '16.16666666'
+  longitude: '107.83333333'
+  name: Vietnam
+  nationality: Vietnamese
+  native: Việt Nam
+  numeric_code: '704'
+  phonecode: '84'
+  region: Asia
+  region_id: 3
+  subregion: South-Eastern Asia
+  subregion_id: 13
+  timezones:
+  - abbreviation: ICT
+    gmtOffset: 25200
+    gmtOffsetName: UTC+07:00
+    tzName: Indochina Time
+    zoneName: Asia/Ho_Chi_Minh
+  tld: .vn
+  translations:
+    de: Vietnam
+    es: Vietnam
+    fa: ویتنام
+    fr: Viêt Nam
+    hr: Vijetnam
+    it: Vietnam
+    ja: ベトナム
+    ko: 베트남
+    nl: Vietnam
+    pl: Wietnam
+    pt: Vietname
+    pt-BR: Vietnã
+    ru: Вьетнам
+    tr: Vietnam
+    uk: В'єтнам
+    zh-CN: 越南

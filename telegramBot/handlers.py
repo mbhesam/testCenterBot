@@ -9,6 +9,8 @@ from telegram.ext import (
     MessageHandler,
     filters
 )
+from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
+from datetime import datetime, date
 from common import (
     WELCOME_MESSAGE,
     INFO_QUESTIONS,
@@ -19,11 +21,18 @@ from common import (
     PREPARING_QUESTIONS,
     FAILED_FETCH_DATA,
     END_EXAM_WITHOUT_OFF,
-    END_EXAM_TIME
+    END_EXAM_TIME,
+    FULL_INFO_QUESTIONS,
+    GET_STATIC_INFO_BUTTON, CALLENDER_FAILED, COUNTRY_FAILED, STATE_FAILED, CITY_FAILED, COMPLETE_INFO,
+    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT
 )
 from utils import (
     fetch_questions,
-    check_grade
+    check_grade,
+    load_countries,
+    load_states_by_country_code,
+    load_cities_by_state_and_country,
+    approve_off_code
 )
 from users_data import (
     clear_user_data,
@@ -31,7 +40,7 @@ from users_data import (
     save_user_data,
     get_exam_data,
     save_exam_data,
-    clear_exam_data
+    clear_exam_data, clear_share_count
 )
 from config import EXAM_DURATION_SECONDS
 import json
@@ -42,7 +51,12 @@ import math
 STATES = {
     'start': 0,
     'get_info': 1,
-    'start_exam': 2,
+    'get_static_info': 2,
+    'awaiting_birthday': 3,
+    'country_selection': 4,
+    'state_selection': 5,
+    'city_selection': 6,
+    'start_exam': 7,
 }
 
 # /start
@@ -50,8 +64,10 @@ async def start_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
     user_data = get_user_data(username=username)
     await update.message.reply_text(WELCOME_MESSAGE)
+    print(user_data.get('status'))
     if user_data.get('status') == 'ready_exam':
-        await update.message.reply_text(ALREADY_SUBMITTED)
+        await update.message.reply_text(ALREADY_SUBMITTED,
+                     reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON, START_BUTTON]], one_time_keyboard=True, resize_keyboard=True))
         return STATES['start_exam']
     _, fq = INFO_QUESTIONS[0]
     await update.message.reply_text(fq)  # ask for phone number
@@ -76,7 +92,11 @@ async def get_info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_data['info']['suggester'] = update.message.text
         user_data['status'] = 'ready_exam'
         save_user_data(username=username, data=user_data)
-
+        # 🎯 Update share_off_count for the suggester
+        suggester_username = user_data['info']['suggester']
+        suggester_data = get_user_data(username=suggester_username)
+        suggester_data['share_off_count'] = suggester_data.get('share_off_count', 0) + 1
+        save_user_data(username=suggester_username, data=suggester_data)
         await update.message.reply_text(
             f"""
     ✅ ممنونم دوست عزیز
@@ -85,10 +105,25 @@ async def get_info_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     💡 معرف:
     {user_data['info']['suggester']}
                 """,
-            reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, START_BUTTON]], one_time_keyboard=True,
+            reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON, START_BUTTON]], one_time_keyboard=True,
                                              resize_keyboard=True)
         )
         return STATES['start_exam']
+
+async def check_share_count_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    username = update.effective_user.username
+    user_data = get_user_data(username=username)
+    if user_data['share_off_count'] >= 3:
+        await update.message.reply_text(
+            f" تعداد افرادی که شما رو به عنوان معرف مشخص کردند: {user_data['share_off_count']}")
+        await update.message.reply_text(ENOUGH_SHARE_COUNT)
+        off_code = approve_off_code(grade='S', phone_number=user_data['info']['phone'])
+        await update.message.reply_text(off_code)
+        clear_share_count(username=username)
+        return STATES['start_exam']
+    await update.message.reply_text(f" تعداد افرادی که شما رو به عنوان معرف مشخص کردند: {user_data['share_off_count']}")
+    await update.message.reply_text(NOT_ENOUGH_SHARE_COUNT)
+    return STATES['start_exam']
 
 async def start_exam_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
@@ -175,14 +210,18 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.callback_query.message.reply_text(END_EXAM_TIME + f"📝 نمره آزمون شما: {exam_data['score']}\n" + grade_message)
 
         if get_off:
-            user_data['off_count'] += 1
+            user_data['test_off_count'] += 1
             clear_exam_data(username=username)
             save_user_data(username=username, data=user_data)
-            if user_data['off_count'] >= 4:
+            if user_data['test_off_count'] >= 4:
                 await update.callback_query.message.reply_text(END_EXAM_WITHOUT_OFF)
                 return STATES['start']
-        return
-
+            off_code = approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
+            print(off_code)
+            return STATES['start_exam']
+        await update.message.reply_text(SHARE_SUGGESTION)
+        await update.message.reply_text(share_bot_template(username))
+        return STATES['start_exam']
     # Proceed with handling if still in time
     index = exam_data['current_question']
 
@@ -215,15 +254,273 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 exam_grade, grade_message, get_off = check_grade(score=exam_data['score'])
                 await update.callback_query.message.reply_text(f"📝 نمره آزمون شما: {exam_data['score']}" + grade_message)
                 if get_off:
-                    user_data['off_count'] += 1
+                    user_data['test_off_count'] += 1
                     clear_exam_data(username=username)
                     save_user_data(username=username, data=user_data)
-                    if user_data['off_count'] >= 4:
+                    if user_data['test_off_count'] >= 10:
                         await update.callback_query.message.reply_text(END_EXAM_WITHOUT_OFF)
+                        print("not get off code")
                         return STATES['start']
+                    off_code = approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
+                    print(off_code)
+                    return STATES['start_exam']
+                await update.message.reply_text(SHARE_SUGGESTION)
+                await update.message.reply_text(share_bot_template(username))
+                return STATES['start_exam']
         except Exception as e:
             print(f"Error handling submit: {e}")
             await query.answer(FAILED_FETCH_DATA)
+
+
+async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    username = update.effective_user.username
+    user_data = get_user_data(username=username)
+
+    if user_data.get('status') == 'get_static_info':
+        await update.message.reply_text(ALREADY_SUBMITTED)
+        return STATES['start_exam']
+
+    # Initialize progress tracking if not exists
+    if 'question_index' not in context.user_data:
+        context.user_data['question_index'] = 0
+        full_questions = FULL_INFO_QUESTIONS.split("\n")
+        context.user_data['full_questions'] = full_questions
+        await update.message.reply_text(full_questions[0])
+        return STATES['get_static_info']
+
+    # Process the answer
+    question_index = context.user_data['question_index']
+    full_questions = context.user_data['full_questions']
+
+    # Store answer based on current question
+    if question_index == 0:
+        user_data['info']['first_name'] = update.message.text
+    elif question_index == 1:
+        user_data['info']['last_name'] = update.message.text
+    elif question_index == 2:
+        user_data['info']['code_melli'] = update.message.text
+    elif question_index == 3:
+        user_data['info']['email'] = update.message.text
+
+    # Move to next question or finish
+    context.user_data['question_index'] += 1
+
+    if context.user_data['question_index'] < len(full_questions) - 4:
+        await update.message.reply_text(full_questions[context.user_data['question_index']])
+        return STATES['get_static_info']
+    else:
+        return await birth_selection(update, context)
+
+
+async def birth_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    # Initialize calendar with consistent settings
+    calendar = DetailedTelegramCalendar(
+        calendar_id=1,
+        min_date=date(1930, 1, 1),
+        max_date=date.today()
+    )
+    markup, step = calendar.build()
+
+    await update.message.reply_text(
+        f" {FULL_INFO_QUESTIONS.split("\n")[4]} {LSTEP[step]}:",
+        reply_markup=markup
+    )
+    return STATES['awaiting_birthday']
+
+
+async def handle_calendar_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+
+    username = query.from_user.username
+    user_data = get_user_data(username=username)
+
+    if not user_data:
+        await query.edit_message_text(FAILED_FETCH_DATA)
+        return STATES['start_exam']
+
+    try:
+        calendar = DetailedTelegramCalendar(calendar_id=1)
+        date, key, step = calendar.process(query.data)
+        if not date:
+            # Rebuild calendar for next step
+            new_markup, new_step = calendar.build()
+            await query.edit_message_text(
+                f"Select {LSTEP[new_step]}:",
+                reply_markup=new_markup
+            )
+            return STATES['awaiting_birthday']
+        # Date selected successfully
+        formatted_date = date.strftime("%Y-%m-%d")
+        user_data['info']['birth_date'] = formatted_date
+        save_user_data(username=username, data=user_data)
+
+        await query.edit_message_text(
+            f" 👏 اطلاعات تاریخ تولد شما ثبت شد:\n {formatted_date}\n"
+        )
+        return await country_selection(update, context)
+
+    except Exception as e:
+        print(f"Calendar error: {str(e)}")
+        await query.edit_message_text(
+            CALLENDER_FAILED
+        )
+        return STATES['awaiting_birthday']
+
+
+async def country_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    countries = load_countries()
+
+    keyboard = []
+    row = []
+    for idx, country in enumerate(countries):
+        button = InlineKeyboardButton(country['name'], callback_data=f"country_{country['iso2']}")
+        row.append(button)
+        if len(row) == 3:  # 3 buttons per row
+            keyboard.append(row)
+            row = []
+    if row:  # Append remaining buttons
+        keyboard.append(row)
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    if update.message:
+        await update.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[5]}", reply_markup=reply_markup)
+    elif update.callback_query:
+        await update.callback_query.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[5]}", reply_markup=reply_markup)
+    return STATES["country_selection"]
+
+async def handle_country_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    username = query.from_user.username
+    user_data = get_user_data(username=username)
+    iso2 = query.data.split("_")[1]
+    countries = load_countries()
+    country = next((c for c in countries if c['iso2'] == iso2), None)
+    if country:
+        await query.edit_message_text(f" انتخاب شما کشور: {country['name']} {country['emoji']}")
+        # You can also store it in user_data or DB
+        context.user_data['country'] = country
+        user_data['info']['country'] = country['name']
+        save_user_data(username=username, data=user_data)
+        return await state_selection(update, context)
+    else:
+        await query.edit_message_text(COUNTRY_FAILED)
+        return STATES['start_exam']
+
+
+async def state_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    country = context.user_data.get('country')
+    if not country:
+        await update.message.reply_text(COUNTRY_FAILED)
+        return
+
+    iso2_code = country['iso2']
+    states = load_states_by_country_code(iso2_code)
+
+    if not states:
+        await update.message.reply_text(STATE_FAILED)
+        return
+
+    keyboard = []
+    row = []
+    for idx, state in enumerate(states):
+        button = InlineKeyboardButton(state['name'], callback_data=f"state_{state['state_code']}")
+        row.append(button)
+        if len(row) == 3:
+            keyboard.append(row)
+            row = []
+    if row:
+        keyboard.append(row)
+
+    reply_markup = InlineKeyboardMarkup(keyboard)
+    if update.message:
+        await update.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[6]}", reply_markup=reply_markup)
+    elif update.callback_query:
+        await update.callback_query.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[6]}", reply_markup=reply_markup)
+    return STATES['state_selection']
+
+async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    query = update.callback_query
+    await query.answer()
+    username = query.from_user.username
+    user_data = get_user_data(username=username)
+    state_code = query.data.split("_")[1]
+    selected_country = context.user_data.get('country')
+    if not selected_country:
+        await query.edit_message_text(STATE_FAILED)
+        return
+
+    states = load_states_by_country_code(selected_country['iso2'])
+    state = next((s for s in states if s['state_code'] == state_code), None)
+
+    if state:
+        context.user_data['state'] = state
+        await query.edit_message_text(f" انتخاب استان: {state['name']}")
+        user_data['info']['state'] = state['name']
+        save_user_data(username=username, data=user_data)
+        return STATES['start_exam']
+    else:
+        await query.edit_message_text(STATE_FAILED)
+        return STATES['start_exam']
+
+# async def city_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     state = context.user_data.get('state')
+#     country = context.user_data.get('country')
+#     if not state or not country:
+#         await update.callback_query.message.reply_text(CITY_FAILED)
+#         return STATES['start_exam']
+#
+#     state_code = state['state_code']
+#     country_code = country['iso2']
+#
+#     cities = load_cities_by_state_and_country(state_code, country_code)
+#
+#     if not cities:
+#         await update.callback_query.message.reply_text(CITY_FAILED)
+#         return STATES['start_exam']
+#
+#     keyboard = []
+#     row = []
+#     for idx, city in enumerate(cities):
+#         button = InlineKeyboardButton(city['name'], callback_data=f"city_{city['id']}")
+#         row.append(button)
+#         if len(row) == 3:
+#             keyboard.append(row)
+#             row = []
+#     if row:
+#         keyboard.append(row)
+#
+#     reply_markup = InlineKeyboardMarkup(keyboard)
+#
+#     await update.callback_query.message.reply_text(
+#         f"شهر خود را در استان {state['name']} انتخاب کنید:",
+#         reply_markup=reply_markup
+#     )
+#     return STATES['city_selection']
+#
+# async def handle_city_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
+#     query = update.callback_query
+#     await query.answer()
+#     city_id = int(query.data.split("_")[1])
+#     state = context.user_data.get('state')
+#     country = context.user_data.get('country')
+#     username = query.from_user.username
+#     user_data = get_user_data(username=username)
+#
+#     cities = load_cities_by_state_and_country(state['state_code'], country['iso2'])
+#     city = next((c for c in cities if c['id'] == city_id), None)
+#
+#     if city:
+#         context.user_data['city'] = city
+#         user_data['info']['city'] = city['name']
+#         save_user_data(username=username, data=user_data)
+#         await query.edit_message_text(f" انتخاب شهر: {city['name']}")
+#         await update.message.reply_text(COMPLETE_INFO)
+#         return STATES['start_exam']
+#     else:
+#         await query.edit_message_text(CITY_FAILED)
+#         return STATES['start_exam']
 
 main_handler = ConversationHandler(
     entry_points=[
@@ -236,8 +533,34 @@ main_handler = ConversationHandler(
         STATES['get_info']: [
             MessageHandler(filters.TEXT & ~filters.COMMAND, get_info_handler),
         ],
-        STATES['start_exam']: [
+        STATES['get_static_info']: [
+            MessageHandler(filters.TEXT & ~filters.COMMAND, get_static_info),  # Removed parentheses
+        ],
+        STATES['awaiting_birthday']: [
+            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
             MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            CallbackQueryHandler(handle_calendar_callback)
+        ],
+        STATES['country_selection']: [
+            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
+            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            CallbackQueryHandler(handle_country_choice, pattern=r"^country_"),
+        ],
+        STATES['state_selection']: [
+            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
+            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            CallbackQueryHandler(handle_state_choice, pattern=r"^state_"),
+        ],
+        # STATES['city_selection']: [
+        #     MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
+        #     MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+        #     CallbackQueryHandler(handle_city_choice, pattern=r"^city_"),
+        #],
+        STATES['start_exam']: [
+            MessageHandler(filters.Regex(f"^{CHECK_SHARE_COUNT}$"), check_share_count_handler),
+            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
+            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), check_share_count_handler),
             CallbackQueryHandler(handle_callback),  # Optional here
         ],
     },
