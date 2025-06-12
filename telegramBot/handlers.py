@@ -24,7 +24,7 @@ from common import (
     END_EXAM_TIME,
     FULL_INFO_QUESTIONS,
     GET_STATIC_INFO_BUTTON, CALLENDER_FAILED, COUNTRY_FAILED, STATE_FAILED, CITY_FAILED, COMPLETE_INFO,
-    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT
+    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT, SHARE_CHECK
 )
 from utils import (
     fetch_questions,
@@ -67,7 +67,7 @@ async def start_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(user_data.get('status'))
     if user_data.get('status') == 'ready_exam':
         await update.message.reply_text(ALREADY_SUBMITTED,
-                     reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON, START_BUTTON]], one_time_keyboard=True, resize_keyboard=True))
+                     reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON], [SHARE_CHECK, START_BUTTON]], resize_keyboard=True, one_time_keyboard=True))
         return STATES['start_exam']
     _, fq = INFO_QUESTIONS[0]
     await update.message.reply_text(fq)  # ask for phone number
@@ -184,6 +184,8 @@ async def send_current_question(update: Update, context: ContextTypes.DEFAULT_TY
         for i, opt in enumerate(options)
     ]
     keyboard.append([InlineKeyboardButton(text="✅ ثبت پاسخ ها", callback_data=f"submit|{username}")])
+    keyboard.append([InlineKeyboardButton(text="📨 اشتراک‌گذاری سوال", callback_data=f"share|{username}")])
+
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     full_text = question_text + time_info
@@ -233,6 +235,17 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             exam_data['current_selections'].append(opt_index)
         save_exam_data(username, exam_data)
         await send_current_question(update, context, username)
+
+    elif action == 'share':
+        index = exam_data['current_question']
+        question_data = exam_data['data'][index]
+        question_text = question_data['question']
+        options = json.loads(question_data['options'])
+
+        text = f"❓ {question_text}\n\n" + "\n".join([f"{i + 1}. {opt}" for i, opt in enumerate(options)])
+        text += "\n\n📝 پاسخ خود را در ربات وارد کنید."
+
+        await update.callback_query.message.reply_text(text)
 
     elif action == 'submit':
         try:
@@ -560,7 +573,7 @@ main_handler = ConversationHandler(
             MessageHandler(filters.Regex(f"^{CHECK_SHARE_COUNT}$"), check_share_count_handler),
             MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
             MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
-            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), check_share_count_handler),
+            MessageHandler(filters.Regex(f"^{SHARE_CHECK}$"), check_share_count_handler),
             CallbackQueryHandler(handle_callback),  # Optional here
         ],
     },

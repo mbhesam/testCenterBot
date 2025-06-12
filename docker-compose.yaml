@@ -16,5 +16,5 @@ services:
   bot:
     build: .
     restart: always
-    volumes:
-      - ../volumes/testCenterBot/bot/data:/code/data
+#    volumes:
+#      - ../volumes/testCenterBot/bot/data:/code/data
