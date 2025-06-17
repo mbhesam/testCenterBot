@@ -49,20 +49,10 @@ def check_grade(score=-1):
 
 import requests
 
-def approve_off_code(grade, phone_number):
-    if grade == 'A':
-        off_code = asyncio.run(submit_off_code(phone_number, GRADE_A_OFF, PRODUCT_IDS_A))
-    elif grade == 'B':
-        off_code = asyncio.run(submit_off_code(phone_number, GRADE_B_OFF, PRODUCT_IDS_B))
-    elif grade == 'S':
-        off_code = asyncio.run(submit_off_code(phone_number, GRADE_S_OFF, PRODUCT_IDS_S))
-    else:
-        off_code = None
-    return off_code
 
 async def submit_off_code(phone_number, off_percent, product_ids):
     try:
-        print("submitting")
+        print("Submitting discount code request...")
         data = {
             'api_key': WEBSITE_API_KEY,
             'discount_type': 'percent',
@@ -70,28 +60,42 @@ async def submit_off_code(phone_number, off_percent, product_ids):
             'discount_percent': off_percent,
             'usage_limit': '1',
             'expiry_date': '2025-08-01',
-            'product_ids[]': product_ids  # httpx handles list values automatically
+            'product_ids[]': product_ids
         }
 
         async with httpx.AsyncClient() as client:
             response = await client.post(
                 url=WEBSITE_API_URL,
-                headers={
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                },
-                data=data
+                headers={'Content-Type': 'application/x-www-form-urlencoded'},
+                data=data,
+                timeout=10.0  # Added timeout for safety
             )
             response.raise_for_status()
             response_obj = response.json()
+
             if response_obj.get('status') == 'success':
-                return response_obj['coupon']['code']  # Return just the coupon code
-            else:
-                raise ValueError("API request was not successful")
+                return response_obj['coupon']['code']
+            raise ValueError(f"API request failed: {response_obj.get('message', 'Unknown error')}")
+
     except httpx.HTTPStatusError as e:
-        print(f"HTTP error occurred: {e.response.status_code} - {e.response.text}")
+        print(f"HTTP error {e.response.status_code}: {e.response.text}")
+        return None
     except Exception as e:
-        print(f"An error occurred: {e}")
-        print(f'exception on calling website api:\n{e}')
+        print(f"Error submitting off code: {str(e)}")
+        return None
+
+
+async def approve_off_code(grade, phone_number):
+    """Async version that should be called from async context"""
+    if grade == 'A':
+        return await submit_off_code(phone_number, GRADE_A_OFF, PRODUCT_IDS_A)
+    elif grade == 'B':
+        return await submit_off_code(phone_number, GRADE_B_OFF, PRODUCT_IDS_B)
+    elif grade == 'S':
+        return await submit_off_code(phone_number, GRADE_S_OFF, PRODUCT_IDS_S)
+    print(f"Invalid grade: {grade}")
+    return None
+
 
 async def fetch_questions():
     async with httpx.AsyncClient() as client:

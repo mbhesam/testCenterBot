@@ -117,7 +117,7 @@ async def check_share_count_handler(update: Update, context: ContextTypes.DEFAUL
         await update.message.reply_text(
             f" تعداد افرادی که شما رو به عنوان معرف مشخص کردند: {user_data['share_off_count']}")
         await update.message.reply_text(ENOUGH_SHARE_COUNT)
-        off_code = approve_off_code(grade='S', phone_number=user_data['info']['phone'])
+        off_code = await approve_off_code(grade='S', phone_number=user_data['info']['phone'])
         await update.message.reply_text(off_code)
         clear_share_count(username=username)
         return STATES['start_exam']
@@ -218,7 +218,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             if user_data['test_off_count'] >= 4:
                 await update.callback_query.message.reply_text(END_EXAM_WITHOUT_OFF)
                 return STATES['start']
-            off_code = approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
+            off_code = await approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
             print(off_code)
             return STATES['start_exam']
         await update.message.reply_text(SHARE_SUGGESTION)
@@ -274,7 +274,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                         await update.callback_query.message.reply_text(END_EXAM_WITHOUT_OFF)
                         print("not get off code")
                         return STATES['start']
-                    off_code = approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
+                    off_code = await approve_off_code(grade=exam_grade, phone_number=user_data['info']['phone'])
                     print(off_code)
                     return STATES['start_exam']
                 await update.message.reply_text(SHARE_SUGGESTION)
