@@ -335,7 +335,7 @@ async def birth_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     markup, step = calendar.build()
 
     await update.message.reply_text(
-        f" {FULL_INFO_QUESTIONS.split("\n")[4]} {LSTEP[step]}:",
+        f'{FULL_INFO_QUESTIONS.split("\n")[4]} {LSTEP[step]}:',
         reply_markup=markup
     )
     return STATES['awaiting_birthday']
