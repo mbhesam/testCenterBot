@@ -3,3 +3,4 @@ redis==6.1.0
 uwsgi==2.0.29
 python-dotenv==1.1.0
 requests==2.32.3
+python-telegram-bot-calendar==1.0.5
