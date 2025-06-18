@@ -333,9 +333,9 @@ async def birth_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         max_date=date.today()
     )
     markup, step = calendar.build()
-
+    q4 = FULL_INFO_QUESTIONS.split("\n")[4]
     await update.message.reply_text(
-        f'{FULL_INFO_QUESTIONS.split("\n")[4]} {LSTEP[step]}:',
+        f'{q4} {LSTEP[step]}:',
         reply_markup=markup
     )
     return STATES['awaiting_birthday']
@@ -394,12 +394,12 @@ async def country_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
             row = []
     if row:  # Append remaining buttons
         keyboard.append(row)
-
+    q5 = FULL_INFO_QUESTIONS.split("\n")[5]
     reply_markup = InlineKeyboardMarkup(keyboard)
     if update.message:
-        await update.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[5]}", reply_markup=reply_markup)
+        await update.message.reply_text(f"{q5}", reply_markup=reply_markup)
     elif update.callback_query:
-        await update.callback_query.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[5]}", reply_markup=reply_markup)
+        await update.callback_query.message.reply_text(f"{q5}", reply_markup=reply_markup)
     return STATES["country_selection"]
 
 async def handle_country_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -447,10 +447,11 @@ async def state_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard.append(row)
 
     reply_markup = InlineKeyboardMarkup(keyboard)
+    q6 = FULL_INFO_QUESTIONS.split("\n")[6]
     if update.message:
-        await update.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[6]}", reply_markup=reply_markup)
+        await update.message.reply_text(f"{q6}", reply_markup=reply_markup)
     elif update.callback_query:
-        await update.callback_query.message.reply_text(f"{FULL_INFO_QUESTIONS.split("\n")[6]}", reply_markup=reply_markup)
+        await update.callback_query.message.reply_text(f"{q6}", reply_markup=reply_markup)
     return STATES['state_selection']
 
 async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE):
