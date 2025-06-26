@@ -24,7 +24,7 @@ from common import (
     END_EXAM_TIME,
     FULL_INFO_QUESTIONS,
     GET_STATIC_INFO_BUTTON, CALLENDER_FAILED, COUNTRY_FAILED, STATE_FAILED, CITY_FAILED, COMPLETE_INFO,
-    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT, SHARE_CHECK
+    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT
 )
 from utils import (
     fetch_questions,
@@ -67,7 +67,7 @@ async def start_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(user_data.get('status'))
     if user_data.get('status') == 'ready_exam':
         await update.message.reply_text(ALREADY_SUBMITTED,
-                     reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON], [SHARE_CHECK, START_BUTTON]], resize_keyboard=True, one_time_keyboard=True))
+                     reply_markup=ReplyKeyboardMarkup([[START_EXAM_BUTTON, GET_STATIC_INFO_BUTTON], [CHECK_SHARE_COUNT, START_BUTTON]], resize_keyboard=True, one_time_keyboard=True))
         return STATES['start_exam']
     _, fq = INFO_QUESTIONS[0]
     await update.message.reply_text(fq)  # ask for phone number
@@ -538,7 +538,7 @@ async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE
 
 main_handler = ConversationHandler(
     entry_points=[
-        MessageHandler(filters.Regex(f"^{START_BUTTON}$"), start_handler)
+        MessageHandler(filters.Regex(f"^(/start|{START_BUTTON})$"), start_handler),
     ],
     states={
         STATES['start']: [
@@ -551,18 +551,18 @@ main_handler = ConversationHandler(
             MessageHandler(filters.TEXT & ~filters.COMMAND, get_static_info),  # Removed parentheses
         ],
         STATES['awaiting_birthday']: [
-            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
-            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            MessageHandler(filters.Regex(f"^(/get_static_info|{GET_STATIC_INFO_BUTTON})$"), get_static_info),
+            MessageHandler(filters.Regex(f"^(/start_exam|{START_EXAM_BUTTON})$"), start_exam_handler),
             CallbackQueryHandler(handle_calendar_callback)
         ],
         STATES['country_selection']: [
-            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
-            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            MessageHandler(filters.Regex(f"^(/get_static_info|{GET_STATIC_INFO_BUTTON})$"), get_static_info),
+            MessageHandler(filters.Regex(f"^(/start_exam|{START_EXAM_BUTTON})$"), start_exam_handler),
             CallbackQueryHandler(handle_country_choice, pattern=r"^country_"),
         ],
         STATES['state_selection']: [
-            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
-            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
+            MessageHandler(filters.Regex(f"^(/get_static_info|{GET_STATIC_INFO_BUTTON})$"), get_static_info),
+            MessageHandler(filters.Regex(f"^(/start_exam|{START_EXAM_BUTTON})$"), start_exam_handler),
             CallbackQueryHandler(handle_state_choice, pattern=r"^state_"),
         ],
         # STATES['city_selection']: [
@@ -571,14 +571,14 @@ main_handler = ConversationHandler(
         #     CallbackQueryHandler(handle_city_choice, pattern=r"^city_"),
         #],
         STATES['start_exam']: [
-            MessageHandler(filters.Regex(f"^{CHECK_SHARE_COUNT}$"), check_share_count_handler),
-            MessageHandler(filters.Regex(f"^{GET_STATIC_INFO_BUTTON}$"), get_static_info),
-            MessageHandler(filters.Regex(f"^{START_EXAM_BUTTON}$"), start_exam_handler),
-            MessageHandler(filters.Regex(f"^{SHARE_CHECK}$"), check_share_count_handler),
+            MessageHandler(filters.Regex(f"^(/check_share_count|{CHECK_SHARE_COUNT})$"), check_share_count_handler),
+            MessageHandler(filters.Regex(f"^(/get_static_info|{GET_STATIC_INFO_BUTTON})$"), get_static_info),
+            MessageHandler(filters.Regex(f"^(/start_exam|{START_EXAM_BUTTON})$"), start_exam_handler),
+            # MessageHandler(filters.Regex(f"^(/check_share_count|{CHECK_SHARE_COUNT})$"), check_share_count_handler),
             CallbackQueryHandler(handle_callback),  # Optional here
         ],
     },
     fallbacks=[
-        MessageHandler(filters.Regex(f"^{START_BUTTON}$"), start_handler),
+        MessageHandler(filters.Regex(f"^(/start|{START_BUTTON})$"), start_handler),
     ],
 )
