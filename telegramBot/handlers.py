@@ -24,7 +24,8 @@ from common import (
     END_EXAM_TIME,
     FULL_INFO_QUESTIONS,
     GET_STATIC_INFO_BUTTON, CALLENDER_FAILED, COUNTRY_FAILED, STATE_FAILED, CITY_FAILED, COMPLETE_INFO,
-    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT
+    SHARE_SUGGESTION, share_bot_template, CHECK_SHARE_COUNT, NOT_ENOUGH_SHARE_COUNT, ENOUGH_SHARE_COUNT,
+    CONFIRM_STATIC_INFO
 )
 from utils import (
     fetch_questions,
@@ -475,6 +476,13 @@ async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE
         context.user_data['state'] = state
         await query.edit_message_text(f" انتخاب استان: {state['name']}")
         user_data['info']['state'] = state['name']
+        await update.message.reply_text(CONFIRM_STATIC_INFO)
+        if user_data['info_complete']:
+            save_user_data(username=username, data=user_data)
+            return STATES['start_exam']
+        off_code = await approve_off_code(grade='S', phone_number=user_data['info']['phone'])
+        await update.message.reply_text(off_code)
+        user_data['info_complete'] = True
         save_user_data(username=username, data=user_data)
         return STATES['start_exam']
     else:

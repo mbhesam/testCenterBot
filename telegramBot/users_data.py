@@ -16,7 +16,7 @@ def get_user_key(username):
 
 def get_user_data(username):
     data = redis_client.get(get_user_key(username))
-    return json.loads(data) if data else {'status': 'start', 'info': {}, 'test_off_count': 0,'share_off_count': 0 }
+    return json.loads(data) if data else {'status': 'start', 'info': {}, 'test_off_count': 0, 'share_off_count': 0, 'info_complete': False}
 
 def save_user_data(username, data):
     redis_client.set(get_user_key(username), json.dumps(data))
