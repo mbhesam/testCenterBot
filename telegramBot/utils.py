@@ -19,7 +19,7 @@ import httpx
 import yaml
 import asyncio
 def load_cities_by_state_and_country(state_code, country_code):
-    with open('../data/cities.yml', 'r', encoding='utf-8') as f:
+    with open('data/cities.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
     return [
         city for city in data['city']
