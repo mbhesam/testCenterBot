@@ -474,13 +474,15 @@ async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE
     if state:
         context.user_data['state'] = state
         await query.edit_message_text(f" انتخاب استان: {state['name']}")
+        time.sleep(3)
         user_data['info']['state'] = state['name']
         await query.edit_message_text(CONFIRM_STATIC_INFO)
+        time.sleep(3)
         if user_data['info_complete']:
             save_user_data(username=username, data=user_data)
             return STATES['start_exam']
         off_code = await approve_off_code(grade='S', phone_number=user_data['info']['phone'])
-        await update.message.reply_text(off_code)
+        await query.edit_message_text(off_code)
         user_data['info_complete'] = True
         save_user_data(username=username, data=user_data)
         return STATES['start_exam']
