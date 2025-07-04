@@ -291,10 +291,6 @@ async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
     user_data = get_user_data(username=username)
 
-    if user_data.get('status') == 'get_static_info':
-        await update.message.reply_text(ALREADY_SUBMITTED)
-        return STATES['start_exam']
-
     # Initialize progress tracking if not exists
     if 'question_index' not in context.user_data:
         context.user_data['question_index'] = 0
@@ -315,6 +311,7 @@ async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif question_index == 2:
         user_data['info']['code_melli'] = update.message.text
         if not is_integer(user_data['info']['code_melli']):
+            context.user_data[question_index] = 0
             return STATES['get_static_info']
     elif question_index == 3:
         user_data['info']['email'] = update.message.text
