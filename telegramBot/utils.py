@@ -26,13 +26,13 @@ def load_cities_by_state_and_country(state_code, country_code):
         if city['state_code'] == state_code and city['country_code'] == country_code
     ]
 def load_countries():
-    with open('../data/countries.yml', 'r', encoding='utf-8') as f:
+    with open('data/countries.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
         return data['country']
 
 
 def load_states_by_country_code(iso2_code: str):
-    with open("../data/states.yml", "r", encoding="utf-8") as f:
+    with open("data/states.yml", "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
         all_states = data['state']
         return [state for state in all_states if state['country_code'] == iso2_code]
@@ -47,8 +47,8 @@ def check_grade(score=-1):
     else:
         return 'C',GRADE_C_MESSAGE,False
 
-import requests
-
+def is_integer(s):
+    return s.isdigit()
 
 async def submit_off_code(phone_number, off_percent, product_ids):
     try:

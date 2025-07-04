@@ -29,6 +29,7 @@ from common import (
 from utils import (
     fetch_questions,
     check_grade,
+    is_integer,
     load_countries,
     load_states_by_country_code,
     load_cities_by_state_and_country,
@@ -314,6 +315,9 @@ async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
         user_data['info']['code_melli'] = update.message.text
     elif question_index == 3:
         user_data['info']['email'] = update.message.text
+
+    if not is_integer(user_data['info']['code_melli']):
+        return STATES['get_static_info']
 
     # Move to next question or finish
     context.user_data['question_index'] += 1
