@@ -13,6 +13,7 @@ from telegram_bot_calendar import DetailedTelegramCalendar, LSTEP
 from datetime import datetime, date
 from common import (
     WELCOME_MESSAGE,
+    FAILED_CODE_MELLI,
     INFO_QUESTIONS,
     START_BUTTON,
     START_EXAM_BUTTON,
@@ -290,9 +291,10 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     username = update.effective_user.username
     user_data = get_user_data(username=username)
-
     # Initialize progress tracking if not exists
+    print('question_index' not in context.user_data)
     if 'question_index' not in context.user_data:
+        print('no question index')
         context.user_data['question_index'] = 0
         full_questions = FULL_INFO_QUESTIONS.split("\n")
         context.user_data['full_questions'] = full_questions
@@ -311,8 +313,8 @@ async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     elif question_index == 2:
         user_data['info']['code_melli'] = update.message.text
         if not is_integer(user_data['info']['code_melli']):
-            context.user_data[question_index] = 0
-            return STATES['get_static_info']
+            await update.message.reply_text(FAILED_CODE_MELLI)
+            context.user_data['question_index'] = 1
     elif question_index == 3:
         user_data['info']['email'] = update.message.text
 
@@ -473,7 +475,7 @@ async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE
         context.user_data['state'] = state
         await query.edit_message_text(f" انتخاب استان: {state['name']}")
         user_data['info']['state'] = state['name']
-        await update.message.reply_text(CONFIRM_STATIC_INFO)
+        await query.edit_message_text(CONFIRM_STATIC_INFO)
         if user_data['info_complete']:
             save_user_data(username=username, data=user_data)
             return STATES['start_exam']
