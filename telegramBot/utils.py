@@ -19,20 +19,20 @@ import httpx
 import yaml
 import asyncio
 def load_cities_by_state_and_country(state_code, country_code):
-    with open('/home/hesam/projects/testCenterBot/data/cities.yml', 'r', encoding='utf-8') as f:
+    with open('../data/cities.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
     return [
         city for city in data['city']
         if city['state_code'] == state_code and city['country_code'] == country_code
     ]
 def load_countries():
-    with open('/home/hesam/projects/testCenterBot/data/countries.yml', 'r', encoding='utf-8') as f:
+    with open('../data/countries.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
         return data['country']
 
 
 def load_states_by_country_code(iso2_code: str):
-    with open("/home/hesam/projects/testCenterBot/data/states.yml", "r", encoding="utf-8") as f:
+    with open("../data/states.yml", "r", encoding="utf-8") as f:
         data = yaml.safe_load(f)
         all_states = data['state']
         return [state for state in all_states if state['country_code'] == iso2_code]
