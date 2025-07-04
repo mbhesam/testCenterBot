@@ -18,6 +18,7 @@ import random
 import httpx
 import yaml
 import asyncio
+import requests
 def load_cities_by_state_and_country(state_code, country_code):
     with open('data/cities.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
@@ -50,6 +51,61 @@ def check_grade(score=-1):
 def is_integer(s):
     return s.isdigit()
 
+def submit_off_code_sync(phone_number, off_percent, product_ids):
+    try:
+        print("Submitting discount code request...")
+        # Prepare the data exactly as in the curl command
+        data = {
+            'api_key': WEBSITE_API_KEY,
+            'discount_type': 'percent',
+            'username': phone_number,
+            'discount_percent': str(off_percent),  # Ensure it's string as in curl
+            'usage_limit': '1',
+            'expiry_date': '2025-08-01'
+        }
+
+        # Add product_ids as separate key-value pairs
+        if isinstance(product_ids, (list, tuple)):
+            for i, pid in enumerate(product_ids):
+                data[f'product_ids[]'] = str(pid)  # Same key for each product ID
+        else:
+            data['product_ids[]'] = str(product_ids)
+
+        response = requests.post(
+            url=WEBSITE_API_URL,
+            headers={'Content-Type': 'application/x-www-form-urlencoded'},
+            data=data,  # Using data instead of json
+            timeout=10.0
+        )
+
+        print(f"Response status: {response.status_code}")  # Debugging
+        print(f"Response text: {response.text}")  # Debugging
+
+        response.raise_for_status()
+        response_obj = response.json()
+
+        if response_obj.get('status') == 'success':
+            return response_obj['coupon']['code']
+        raise ValueError(f"API request failed: {response_obj.get('message', 'Unknown error')}")
+
+    except requests.exceptions.HTTPError as e:
+        print(f"HTTP error {e.response.status_code}: {e.response.text}")
+        return None
+    except Exception as e:
+        print(f"Error submitting off code: {str(e)}")
+        return None
+
+
+def approve_off_code_sync(grade, phone_number):
+    """Synchronous version"""
+    if grade == 'A':
+        return submit_off_code_sync(phone_number, GRADE_A_OFF, PRODUCT_IDS_A)
+    elif grade == 'B':
+        return submit_off_code_sync(phone_number, GRADE_B_OFF, PRODUCT_IDS_B)
+    elif grade == 'S':
+        return submit_off_code_sync(phone_number, GRADE_S_OFF, PRODUCT_IDS_S)
+    print(f"Invalid grade: {grade}")
+    return None
 async def submit_off_code(phone_number, off_percent, product_ids):
     try:
         print("Submitting discount code request...")

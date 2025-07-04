@@ -35,7 +35,7 @@ from utils import (
     load_countries,
     load_states_by_country_code,
     load_cities_by_state_and_country,
-    approve_off_code
+    approve_off_code, approve_off_code_sync
 )
 from users_data import (
     clear_user_data,
@@ -481,7 +481,8 @@ async def handle_state_choice(update: Update, context: ContextTypes.DEFAULT_TYPE
         if user_data['info_complete']:
             save_user_data(username=username, data=user_data)
             return STATES['start_exam']
-        off_code = await approve_off_code(grade='S', phone_number=user_data['info']['phone'])
+        off_code = approve_off_code_sync(grade='S', phone_number=user_data['info']['phone'])
+        print(off_code)
         await query.edit_message_text(off_code)
         user_data['info_complete'] = True
         save_user_data(username=username, data=user_data)
