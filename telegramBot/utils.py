@@ -19,6 +19,12 @@ import httpx
 import yaml
 import asyncio
 import requests
+from telegram_bot_calendar import DetailedTelegramCalendar
+from telegram_bot_calendar.detailed import STEPS,PREV_STEPS,PREV_ACTIONS,SELECT,NOTHING,YEAR
+from telegram_bot_calendar.base import *
+from datetime import date
+from dateutil.relativedelta import relativedelta
+
 def load_cities_by_state_and_country(state_code, country_code):
     with open('data/cities.yml', 'r', encoding='utf-8') as f:
         data = yaml.safe_load(f)
@@ -48,8 +54,10 @@ def check_grade(score=-1):
     else:
         return 'C',GRADE_C_MESSAGE,False
 
-def is_integer(s):
-    return s.isdigit()
+def is_integer_and_length_enough(s):
+    if s.isdigit() and len(s) == 10:
+        return True
+    return False
 
 def submit_off_code_sync(phone_number, off_percent, product_ids):
     try:
@@ -106,6 +114,7 @@ def approve_off_code_sync(grade, phone_number):
         return submit_off_code_sync(phone_number, GRADE_S_OFF, PRODUCT_IDS_S)
     print(f"Invalid grade: {grade}")
     return None
+
 async def submit_off_code(phone_number, off_percent, product_ids):
     try:
         print("Submitting discount code request...")
@@ -170,3 +179,29 @@ async def fetch_questions():
             return None
         selected_data = random.sample(response_obj['data'], 10)
         return selected_data
+
+class MyStyleCalendar(DetailedTelegramCalendar):
+    prev_button = "⬅️"
+    next_button = "➡️"
+    size_year = 6
+    size_year_column = 12
+
+    def _build_years(self, *args, **kwargs):
+        years_num = self.size_year * self.size_year_column
+
+        start = self.current_date - relativedelta(years=years_num)
+        years = self._get_period(YEAR, start, years_num)
+        years_buttons = rows(
+            [
+                self._build_button(d.year if d else self.empty_year_button, SELECT if d else NOTHING, YEAR, d,
+                                   is_random=self.is_random)
+                for d in years
+            ],
+            self.size_year
+        )
+
+        nav_buttons = self._build_nav_buttons(YEAR, diff=relativedelta(years=years_num),
+                                              mind=max_date(start, YEAR),
+                                              maxd=min_date(start + relativedelta(years=years_num - 1), YEAR))
+
+        self._keyboard = self._build_keyboard(years_buttons + nav_buttons)

@@ -31,11 +31,13 @@ from common import (
 from utils import (
     fetch_questions,
     check_grade,
-    is_integer,
+    is_integer_and_length_enough,
+    MyStyleCalendar,
     load_countries,
     load_states_by_country_code,
     load_cities_by_state_and_country,
-    approve_off_code, approve_off_code_sync
+    approve_off_code,
+    approve_off_code_sync
 )
 from users_data import (
     clear_user_data,
@@ -327,10 +329,9 @@ async def get_static_info(update: Update, context: ContextTypes.DEFAULT_TYPE):
     else:
         return await birth_selection(update, context)
 
-
 async def birth_selection(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Initialize calendar with consistent settings
-    calendar = DetailedTelegramCalendar(
+    calendar = MyStyleCalendar(
         calendar_id=1,
         min_date=date(1930, 1, 1),
         max_date=date.today()
